@@ -1,7 +1,6 @@
-import StaticNodeMesh from "@/components/hero-animation/StaticNodeMesh";
-import Button from "@/components/ui/Button";
-import SectionAccent from "@/components/ui/SectionAccent";
-import SectionShell from "@/components/ui/SectionShell";
+'use client';
+
+import Link from 'next/link';
 
 interface CtaBandProps {
   title?: string;
@@ -12,89 +11,89 @@ interface CtaBandProps {
   secondaryHref?: string;
 }
 
-/**
- * The closing CTA: a solid navy panel inset into a transparent section, with the
- * hero's node mesh at very low opacity bleeding off its right edge.
- *
- * A panel rather than a full-bleed band. The page is one continuous white
- * surface with a dot grid running through it, and a band would cut that surface
- * in two at the very bottom. An inset panel sits *on* the page instead — same
- * object logic as the filled cards above it, just larger, and the dot grid runs
- * past it on all four sides.
- *
- * The mesh is the point. Every page opens on it and now every page closes on
- * it, which is the one motif the site can claim as its own — so this needs no
- * private decoration. The gradient, the dot-density wedge, and the hairline that
- * preceded it are gone; each was a device that appeared here and nowhere else.
- *
- * Solid navy rather than brand blue: the mesh is blue-ramped and would have
- * nothing to sit against on a brand fill. The panel also carries no dot grid of
- * its own — a 26px grid under a 36px mesh lattice moirés, the same clash
- * NetworkHero puts a scrim behind its mesh to avoid.
- *
- * StaticNodeMesh is server-rendered and never animates, so there is no
- * reduced-motion case to handle: the hero's version is the one that moves.
- *
- * Text colours come from the on-dark tokens, which are measured against navy
- * (16.5:1 and 8.7:1). Orange stays CTA-only — the two buttons and nothing else.
- */
-const CtaBand = ({
-  title = "Ready to build your next-generation network?",
-  description = "Talk to our engineers about data center, ICT, 5G, and cloud infrastructure, from design to deployment and operations.",
-  primaryLabel = "Start the Conversation",
+export default function CtaBand({
+  title = "Ready to build what's next.",
+  description = "Let's start the conversation.",
+  primaryLabel = "Let's Connect",
   primaryHref = "/contact",
-  secondaryLabel = "Explore Solutions",
-  secondaryHref = "/solutions/services",
-}: CtaBandProps) => (
-  // SectionShell's sizes are top-padding-only, so that adjacent sections do not
-  // stack two paddings into one oversized gap. CtaBand is the last section on
-  // every page it appears on, so it is the one place that has to add the
-  // bottom edge back — without it the navy panel sits flush against the
-  // footer's top border.
-  <SectionShell className="pb-20 md:pb-24 lg:pb-28">
-    <div className="container">
-      <div className="relative overflow-hidden rounded-[var(--ds-radius)] bg-navy px-6 py-16 sm:px-12 md:py-20 lg:px-16">
-        {/* Overhangs the right edge and runs past the panel top and bottom, so
-            the panel's overflow-hidden crops it on three sides — it reads as a
-            much larger field the panel happens to be a window onto. Dropped
-            below sm for the same reason NetworkHero drops it: at that width the
-            36px lattice compresses into speckle and stops reading as a mesh. */}
-        <StaticNodeMesh
-          color="#ffffff"
-          opacity={0.08}
-          fadeLeft
-          className="absolute -inset-y-[15%] -right-[8%] hidden w-[68%] sm:block lg:w-[52%]"
-        />
+  secondaryLabel,
+  secondaryHref,
+}: CtaBandProps) {
+  return (
+    <section className="w-full bg-white py-12 md:py-16 lg:py-20">
+      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-r from-purple-50/40 via-orange-50/30 to-rose-50/40 p-8 sm:p-14 lg:p-20 shadow-xs">
 
-        <div className="relative z-10 flex flex-col items-center text-center">
-          <SectionAccent onDark className="mb-6" />
-          <h2 className="mx-auto mb-4 max-w-[680px] text-3xl font-bold leading-tight text-on-dark md:text-4xl">
-            {title}
-          </h2>
-          <p className="mx-auto mb-9 max-w-[560px] text-lg leading-relaxed text-on-dark-muted">
-            {description}
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button variant="cta" size="lg" href={primaryHref}>
-              {primaryLabel}
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Button>
-            {/* Both buttons are lg. Hierarchy is carried by treatment — solid
-                orange against an orange outline — rather than by size, which
-                made the secondary action look like a smaller version of the
-                same button instead of a different kind of one. */}
-            {secondaryLabel && (
-              <Button variant="cta-outline" size="lg" href={secondaryHref}>
-                {secondaryLabel}
-              </Button>
-            )}
+          {/* Subtle flowing background gradient line art */}
+          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <svg
+              className="absolute left-0 bottom-0 h-full w-full opacity-35"
+              viewBox="0 0 1200 400"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M-100 350 C 300 150, 600 450, 1300 200"
+                stroke="url(#cta-grad-1)"
+                strokeWidth="2"
+              />
+              <path
+                d="M-50 280 C 400 380, 800 100, 1350 320"
+                stroke="url(#cta-grad-2)"
+                strokeWidth="1.5"
+              />
+              <defs>
+                <linearGradient id="cta-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#9333EA" />
+                  <stop offset="50%" stopColor="#EC4899" />
+                  <stop offset="100%" stopColor="#F97316" />
+                </linearGradient>
+                <linearGradient id="cta-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#6366F1" />
+                  <stop offset="100%" stopColor="#F43F5E" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
+
+          {/* CTA Content Flexbox */}
+          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div className="max-w-[680px]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0F172A] leading-tight">
+                {title}
+                {description && (
+                  <span className="mt-1 block bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 bg-clip-text text-transparent">
+                    {description}
+                  </span>
+                )}
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4 shrink-0">
+              <Link
+                href={primaryHref}
+                className="inline-flex items-center gap-2.5 rounded-full bg-[#0F172A] px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-[#1E293B] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0F172A] focus:ring-offset-2"
+              >
+                <span>{primaryLabel}</span>
+                <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L19 10m0 0l-5.5 5.5M19 10H5" />
+                </svg>
+              </Link>
+
+              {secondaryLabel && secondaryHref && (
+                <Link
+                  href={secondaryHref}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-4 text-base font-semibold text-[#0F172A] shadow-xs transition-all duration-200 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300"
+                >
+                  <span>{secondaryLabel}</span>
+                </Link>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-  </SectionShell>
-);
-
-export default CtaBand;
+    </section>
+  );
+}

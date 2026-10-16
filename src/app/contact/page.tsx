@@ -1,20 +1,19 @@
+"use client";
+
+import { useState } from "react";
 import ContactGlobe from "@/components/Contact/ContactGlobe";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/ui/Reveal";
 import Badge from "@/components/ui/Badge";
-
-export const metadata = {
-  title: "Contact | Citiuscomm",
-  description:
-    "Reach Citiuscomm at our offices in Mumbai, Kolkata, Delhi, Singapore, and Dubai. We typically reply within one business day.",
-};
+import { ArrowRightIcon } from "@/components/ui/icons";
 
 /* ─── Office data ─────────────────────────────────────────── */
 const headquarters = {
   city: "Mumbai",
   label: "Headquarters",
-  address: "503, Filix Tower, LBS Marg,\nOpp. Asian Paints, Bhandup (West),\nMumbai – 400078.",
-  phone: "022 62362154",
+  address:
+    "503, Filix Tower, LBS Marg,\nOpp. Asian Paints, Bhandup (West),\nMumbai – 400078.",
+  phone: "+91 7045908869 / +91 9831427082",
   email: "sales@citiuscomm.com",
   mapSrc:
     "https://maps.google.com/maps?q=503+Filix+Tower+LBS+Marg+Bhandup+West+Mumbai+400078&z=15&output=embed",
@@ -22,11 +21,6 @@ const headquarters = {
     "https://maps.google.com?q=503+Filix+Tower+LBS+Marg+Bhandup+West+Mumbai+400078",
 };
 
-/**
- * Regional offices. City, country, and the shared sales address only —
- * per-office phone numbers and street addresses are deliberately absent
- * because only the Mumbai HQ details are verified.
- */
 const branches = [
   { city: "Kolkata", country: "India", email: "sales@citiuscomm.com" },
   { city: "Delhi", country: "India", email: "sales@citiuscomm.com" },
@@ -34,7 +28,7 @@ const branches = [
   { city: "Dubai", country: "United Arab Emirates", email: "sales@citiuscomm.com" },
 ];
 
-/* ─── Icons ───────────────────────────────────────────────── */
+/* ─── SVG Icons ───────────────────────────────────────────── */
 const PinIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <path d="M12 21s-7-5.5-7-11.5a7 7 0 0 1 14 0C19 15.5 12 21 12 21z" />
@@ -42,16 +36,29 @@ const PinIcon = ({ size = 20 }: { size?: number }) => (
   </svg>
 );
 
-const PhoneIcon = ({ size = 15 }: { size?: number }) => (
+const PhoneIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
   </svg>
 );
 
-const MailIcon = ({ size = 15 }: { size?: number }) => (
+const MailIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <rect x="3" y="5" width="18" height="14" rx="2" />
     <path d="M3 7l9 6 9-6" />
+  </svg>
+);
+
+const ChatIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+  </svg>
+);
+
+const LockIcon = ({ size = 14 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
   </svg>
 );
 
@@ -61,165 +68,392 @@ const ExternalIcon = () => (
   </svg>
 );
 
-const LinkedInIcon = ({ size = 16 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.419-.103.249-.129.597-.129.946v5.44h-3.554s.05-8.807 0-9.726h3.554v1.375c.427-.659 1.191-1.595 2.897-1.595 2.117 0 3.704 1.385 3.704 4.362v5.584zM5.337 8.855c-1.144 0-1.915-.762-1.915-1.715 0-.957.77-1.715 1.958-1.715 1.187 0 1.914.758 1.939 1.715 0 .953-.752 1.715-1.982 1.715zm1.946 11.597H3.392v-9.726h3.891v9.726zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
-  </svg>
-);
-
-/* ─── Direct contact channels ─────────────────────────────────
-   Three peers, not a primary with fallbacks — the section renders them on one
-   row with identical tiles so none of the three reads as the lesser option. */
-const channels = [
-  {
-    label: "Email",
-    value: "sales@citiuscomm.com",
-    note: "Sales and general enquiries",
-    href: "mailto:sales@citiuscomm.com",
-    icon: <MailIcon size={24} />,
-  },
-  {
-    label: "Phone",
-    value: "022 62362154",
-    note: "Mumbai headquarters",
-    href: "tel:+912262362154",
-    icon: <PhoneIcon size={24} />,
-  },
-  {
-    label: "LinkedIn",
-    value: "Citius Communications",
-    note: "Follow our company page",
-    href: "https://www.linkedin.com/company/citiuscommunications/",
-    external: true,
-    icon: <LinkedInIcon size={24} />,
-  },
-];
-
-/* ─── Branch card ─────────────────────────────────────────── */
-const BranchCard = ({ office }: { office: (typeof branches)[0] }) => (
-  <div className="ds-tile ds-tile-link flex h-full flex-col justify-center gap-1 p-6">
-    <h3 className="text-lg font-bold leading-tight text-heading">{office.city}</h3>
-    <p className="text-xs font-medium uppercase tracking-wider text-faint">{office.country}</p>
-    <a
-      href={`mailto:${office.email}`}
-      className="mt-3 flex items-center gap-2 text-xs text-brand hover:underline"
-    >
-      <MailIcon />
-      <span className="truncate">{office.email}</span>
-    </a>
-  </div>
-);
-
-/* ─── Page ────────────────────────────────────────────────── */
-const DOT_FADE =
-  "linear-gradient(to bottom, transparent 0, black 160px, black calc(100% - 160px), transparent 100%)";
-
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
+  };
+
   return (
-    <main className="relative bg-canvas">
-      {/* Page-wide dotted texture — fades in at the top and out at the bottom */}
-      <div
-        aria-hidden
-        className="ds-dots pointer-events-none absolute inset-0 z-0 text-edge-2/90"
-        style={{ maskImage: DOT_FADE, WebkitMaskImage: DOT_FADE }}
-      />
+    <main className="relative bg-white text-[#0A2540]">
 
-      {/* Hero — globe + intro */}
-      <section className="relative z-10 overflow-hidden pb-16 pt-[100px] md:pb-24 md:pt-[120px]">
-        <div className="container">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
-            <Reveal variant="left" className="text-center lg:text-left">
-              <div className="mb-6">
-                <Badge variant="brand" dot>Contact</Badge>
+      {/* ─── HERO SECTION: CINEMATIC DIGITAL CONNECTIVITY ───────────── */}
+      <section className="relative z-10 overflow-hidden bg-[#040C1A] text-white pt-[110px] pb-10 md:pt-[130px] md:pb-12 lg:pt-[140px] lg:pb-14">
+
+        {/* Background Network Graphic Overlay */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+          {/* Cyan / Blue Radial Glow */}
+          <div className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00E5FF]/[0.08] blur-3xl" />
+          <div className="absolute top-[20%] right-[-5%] h-[400px] w-[500px] rounded-full bg-[#156EB0]/[0.15] blur-3xl" />
+
+          {/* Subtle Network Mesh Grid Backdrop */}
+          <div
+            className="ds-dots absolute inset-0 text-white/[0.08]"
+            style={{
+              maskImage:
+                "radial-gradient(ellipse at center, black 40%, transparent 80%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse at center, black 40%, transparent 80%)",
+            }}
+          />
+
+          {/* SVG Network Lines Graphic */}
+          <svg className="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 1440 600" fill="none">
+            <circle cx="720" cy="300" r="280" stroke="url(#cyanGlow)" strokeWidth="1" strokeDasharray="4 8" />
+            <circle cx="720" cy="300" r="420" stroke="url(#blueGlow)" strokeWidth="1" strokeDasharray="6 12" />
+            <path d="M100 300 C 400 150, 1040 150, 1340 300" stroke="url(#cyanGlow)" strokeWidth="1.5" />
+            <path d="M200 450 C 500 200, 940 200, 1240 450" stroke="url(#blueGlow)" strokeWidth="1.5" />
+            <defs>
+              <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#00E5FF" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#00E5FF" stopOpacity="0.1" />
+              </linearGradient>
+              <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#156EB0" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#156EB0" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#156EB0" stopOpacity="0.1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[1200px] px-5 md:px-8">
+          <div className="grid items-center gap-8 lg:grid-cols-12">
+
+            {/* Top-Left Side Block (Desktop) */}
+            <div className="hidden lg:block lg:col-span-3">
+              <Reveal>
+                <div className="border-l border-[#00E5FF]/40 pl-4 py-1 text-[11px] font-extrabold uppercase tracking-[0.2em] text-slate-400 leading-snug">
+                  CONNECTING <br />
+                  IDEAS ACROSS <br />
+                  A SMARTER <br />
+                  WORLD.
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Central Hero Block */}
+            <div className="lg:col-span-6 flex flex-col items-center text-center">
+
+              {/* Tagline */}
+
+
+              {/* Main Heading */}
+              <Reveal delay={0.08}>
+                <h1 className="mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                  Contact <span className="text-[#D95F02]">Us</span>
+                </h1>
+              </Reveal>
+
+              {/* Subtitle */}
+              <Reveal delay={0.16}>
+                <p className="mb-8 max-w-xl text-base sm:text-lg text-slate-300 leading-relaxed">
+                  Have a question, a project in mind or just want to learn more? We&apos;re here to help.
+                </p>
+              </Reveal>
+
+              {/* Translucent Communication Icon Bar */}
+              <Reveal delay={0.24}>
+                <div className="mb-8 flex items-center justify-center gap-4 sm:gap-6 rounded-full bg-white/10 border border-white/25 px-6 sm:px-8 py-3.5 shadow-[0_0_30px_rgba(0,229,255,0.2)] backdrop-blur-md">
+                  <span className="text-white hover:text-[#00E5FF] transition-colors"><MailIcon size={20} /></span>
+                  <span className="h-4 w-[1px] bg-white/30" />
+                  <span className="text-white hover:text-[#00E5FF] transition-colors"><PhoneIcon size={20} /></span>
+                  <span className="h-4 w-[1px] bg-white/30" />
+                  <span className="text-white hover:text-[#00E5FF] transition-colors"><PinIcon size={20} /></span>
+
+
+                </div>
+              </Reveal>
+
+
+
+            </div>
+
+            {/* Bottom-Right Side Block (Desktop) */}
+            <div className="hidden lg:block lg:col-span-3 text-right">
+              <Reveal delay={0.2}>
+                <div className="border-r border-[#D95F02]/60 pr-4 py-1 text-[11px] font-extrabold uppercase tracking-[0.2em] text-slate-400 leading-snug">
+                  TO A BRIGHTER <br />
+                  TOMORROW
+                </div>
+              </Reveal>
+            </div>
+
+          </div>
+
+          {/* Bottom Center Pillars */}
+          <div className="mt-14 pt-8 border-t border-white/10 text-center">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
+              Let’s Turn Possibilities Into Progress.
+            </span>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ─── SECTION 2: LET'S TALK & SEND US A MESSAGE FORM ─────────── */}
+      <section id="contact-form" className="relative z-10 py-12 md:py-16 lg:py-20 bg-section-alt border-b border-slate-200/60">
+        <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
+
+            {/* Left Column: Let's Talk Info */}
+            <div className="lg:col-span-5 pr-0 lg:pr-6">
+
+
+              <Reveal delay={0.08}>
+                <h2 className="mb-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0A2540]">
+                  Let&apos;s <span className="text-[#D95F02]">talk.</span>
+                </h2>
+              </Reveal>
+
+              <Reveal delay={0.16}>
+                <p className="mb-10 text-base text-[#4A6785] leading-relaxed max-w-md">
+                  Our team is here to answer your questions and explore opportunities.
+                </p>
+              </Reveal>
+
+              {/* Direct Contact Items */}
+              <div className="space-y-6 mb-10">
+
+                {/* Email */}
+                <Reveal delay={0.2}>
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFF3E8] text-[#D95F02]">
+                      <MailIcon size={20} />
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Email</span>
+                      <a href="mailto:sales@citiuscomm.com" className="block text-base font-bold text-[#0A2540] hover:text-[#156EB0] transition-colors">
+                        sales@citiuscomm.com
+                      </a>
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* Phone */}
+                <Reveal delay={0.24}>
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFF3E8] text-[#D95F02]">
+                      <PhoneIcon size={20} />
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Phone</span>
+                      <a href="tel:+918012345678" className="block text-base font-bold text-[#0A2540] hover:text-[#156EB0] transition-colors">
+                        +91 7045908869 / +91 9831427082
+                      </a>
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* Our Office */}
+                <Reveal delay={0.28}>
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFF3E8] text-[#D95F02]">
+                      <PinIcon size={20} />
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Our Office</span>
+                      <p className="text-sm font-semibold text-[#0A2540] leading-relaxed max-w-xs">
+                        503, Filix Tower, LBS Marg,
+                        Opp. Asian Paints, Bhandup (West),
+                        Mumbai – 400078.
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+
               </div>
-              <h1 className="mb-6 text-4xl font-bold leading-tight text-heading sm:text-5xl md:text-6xl">
-                Let&apos;s Build <span className="text-accent">Together</span>
-              </h1>
-              <p className="mx-auto mb-8 max-w-xl text-lg leading-relaxed text-muted lg:mx-0">
-                From multiple cities across three continents, we keep you connected to the
-                people and partners that move your business forward.
-              </p>
-              <ul className="flex flex-wrap justify-center gap-2.5 lg:justify-start">
-                {["Mumbai", "Kolkata", "Delhi", "Singapore", "Dubai"].map((city) => (
-                  <li
-                    key={city}
-                    className="rounded-full border border-primary/20 bg-brand-muted px-4 py-1.5 text-sm font-medium text-brand"
-                  >
-                    {city}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
 
-            <Reveal variant="scale">
-              <ContactGlobe />
-            </Reveal>
+              {/* Bottom Accent Note */}
+
+
+            </div>
+
+            {/* Right Column: Send Us A Message Form */}
+            <div className="lg:col-span-7">
+              <Reveal delay={0.12}>
+                <div className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 lg:p-12 shadow-xl">
+
+                  <div className="mb-6 flex items-center gap-2.5">
+                    <span className="h-0.5 w-6 rounded-full bg-[#D95F02]" />
+                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#D95F02]">
+                      SEND US A MESSAGE
+                    </span>
+                  </div>
+
+                  {submitted ? (
+                    <div className="py-12 text-center">
+                      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                        ✓
+                      </div>
+                      <h3 className="text-xl font-bold text-[#0A2540]">Thank you!</h3>
+                      <p className="mt-2 text-sm text-[#4A6785]">
+                        Your message has been received. Our team will reach out to you within one business day.
+                      </p>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+
+                      {/* Name & Work Email Grid */}
+                      <div className="grid gap-6 sm:grid-cols-2">
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-[#0A2540] mb-2">
+                            Name
+                          </label>
+                          <input
+                            type="text"
+                            required
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            placeholder="Your full name"
+                            className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-[#0A2540] placeholder:text-slate-400 focus:border-[#156EB0] focus:bg-white focus:outline-none transition-all"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-[#0A2540] mb-2">
+                            Work Email
+                          </label>
+                          <input
+                            type="email"
+                            required
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            placeholder="you@company.com"
+                            className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-[#0A2540] placeholder:text-slate-400 focus:border-[#156EB0] focus:bg-white focus:outline-none transition-all"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Company */}
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-[#0A2540] mb-2">
+                          Company
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.company}
+                          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                          placeholder="Your company name"
+                          className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-[#0A2540] placeholder:text-slate-400 focus:border-[#156EB0] focus:bg-white focus:outline-none transition-all"
+                        />
+                      </div>
+
+                      {/* Message */}
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-[#0A2540] mb-2">
+                          Message
+                        </label>
+                        <textarea
+                          rows={4}
+                          required
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                          placeholder="Tell us about your project or enquiry..."
+                          className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-[#0A2540] placeholder:text-slate-400 focus:border-[#156EB0] focus:bg-white focus:outline-none transition-all resize-y"
+                        />
+                      </div>
+
+                      {/* Submit Button */}
+                      <button
+                        type="submit"
+                        className="group inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#0A2540] py-3.5 text-sm font-bold text-white transition-all duration-200 hover:bg-[#156EB0] shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#156EB0]"
+                      >
+                        <span>Send message</span>
+                        <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </button>
+
+                      {/* Lock Privacy Note */}
+                      <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400 pt-2">
+                        <LockIcon />
+                        <span>Your information is safe with us. We respect your privacy.</span>
+                      </p>
+
+                    </form>
+                  )}
+
+                </div>
+              </Reveal>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Offices. Bottom padding only: the hero above owns the gap, so adjacent
-          sections never stack their padding into a dead band. */}
-      <section className="relative z-10 pb-16 md:pb-24">
-        <div className="container">
+
+      {/* ─── SECTION 4: GLOBAL OFFICES DIRECTORY ────────────────────── */}
+      <section id="global-offices" className="relative z-10 py-12 md:py-16 lg:py-20 bg-white border-t border-slate-200/60">
+        <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
           <div className="mb-12 text-center">
-            <div className="mb-4">
+            <div className="mb-4 inline-flex items-center gap-2">
               <Badge variant="brand" dot>Global Offices</Badge>
             </div>
-            <h2 className="mb-4 text-3xl font-bold text-heading sm:text-4xl">
+            <h2 className="mb-4 text-3xl sm:text-4xl font-extrabold text-[#0A2540]">
               Always Close to Where You Need Us
             </h2>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted">
-              A strong presence across India with growing international operations in
-              Singapore and Dubai.
+            <p className="mx-auto max-w-2xl text-base text-[#4A6785] leading-relaxed">
+              A strong presence across India with growing international operations in Singapore and Dubai.
             </p>
           </div>
 
-          {/* Tier 1 — the one verified office, given the full width */}
-          <Reveal variant="left">
-            <div className="ds-tile p-8">
+          {/* Headquarters Card */}
+          <Reveal>
+            <div className="ds-tile p-8 sm:p-10 mb-8 border border-slate-200 bg-white shadow-md">
               <div className="grid items-stretch gap-8 lg:grid-cols-2">
-                <div className="flex flex-col">
-                  <div className="mb-6 flex items-center gap-4">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-brand-muted text-brand">
-                      <PinIcon size={26} />
+                <div className="flex flex-col justify-between">
+                  <div>
+                    <div className="mb-6 flex items-center gap-4">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#FFF3E8] text-[#D95F02]">
+                        <PinIcon size={26} />
+                      </div>
+                      <div>
+                        <span className="mb-1 inline-block rounded-full bg-[#0A2540] px-3 py-0.5 text-xs font-bold uppercase tracking-widest text-white">
+                          Headquarters
+                        </span>
+                        <h3 className="text-2xl font-bold text-[#0A2540]">{headquarters.city}</h3>
+                      </div>
                     </div>
-                    <div>
-                      <span className="mb-1 inline-block rounded-full bg-primary px-3 py-0.5 text-xs font-bold uppercase tracking-widest text-white">
-                        Headquarters
-                      </span>
-                      <h3 className="text-2xl font-bold text-heading">{headquarters.city}</h3>
-                    </div>
+
+                    <p className="mb-6 whitespace-pre-line border-b border-slate-100 pb-6 text-base leading-relaxed text-[#4A6785]">
+                      {headquarters.address}
+                    </p>
                   </div>
 
-                  <p className="mb-5 whitespace-pre-line border-b border-edge pb-5 text-base leading-relaxed text-muted">
-                    {headquarters.address}
-                  </p>
-
                   <div className="flex flex-col gap-3">
-                    <div className="flex items-center gap-3 text-sm text-muted">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-muted text-brand">
+                    <div className="flex items-center gap-3 text-sm text-[#4A6785]">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#E8F1F9] text-[#156EB0]">
                         <PhoneIcon />
                       </div>
-                      <span>{headquarters.phone}</span>
+                      <span className="font-semibold text-[#0A2540]">{headquarters.phone}</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-muted text-brand">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#E8F1F9] text-[#156EB0]">
                         <MailIcon />
                       </div>
-                      <a href={`mailto:${headquarters.email}`} className="text-brand hover:underline">
+                      <a href={`mailto:${headquarters.email}`} className="font-semibold text-[#156EB0] hover:underline">
                         {headquarters.email}
                       </a>
                     </div>
                   </div>
                 </div>
 
-                <div className="relative min-h-[240px] overflow-hidden rounded-lg border border-edge">
+                {/* Map Frame */}
+                <div className="relative min-h-[260px] overflow-hidden rounded-xl border border-slate-200 shadow-inner">
                   <a
                     href={headquarters.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-white shadow transition-colors hover:bg-secondary"
+                    className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-md bg-[#0A2540] px-3 py-1.5 text-xs font-medium text-white shadow transition-colors hover:bg-[#156EB0]"
                   >
                     Open in Maps <ExternalIcon />
                   </a>
@@ -227,7 +461,7 @@ export default function Contact() {
                     src={headquarters.mapSrc}
                     width="100%"
                     height="100%"
-                    style={{ border: 0, minHeight: "240px" }}
+                    style={{ border: 0, minHeight: "260px" }}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Mumbai HQ"
@@ -238,72 +472,41 @@ export default function Contact() {
             </div>
           </Reveal>
 
-          {/* Tier 2 — regional offices, city + country + shared sales address only */}
-          <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Regional Branches */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {branches.map((office, i) => (
-              <Reveal key={office.city} variant="right" delay={i * 0.08} className="h-full">
-                <BranchCard office={office} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Direct contact */}
-      <section className="relative z-10 pb-16 md:pb-24">
-        <div className="container">
-          <div className="mb-12 text-center">
-            <div className="mb-4">
-              <Badge variant="brand" dot>Get in Touch</Badge>
-            </div>
-            <h2 className="mb-4 text-3xl font-bold text-heading sm:text-4xl">Reach Us Directly</h2>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted">
-              Email the sales team, call the Mumbai office, or follow us on LinkedIn.
-              Whichever route you take, it reaches the right person.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {channels.map((channel, i) => (
-              <Reveal key={channel.label} delay={i * 0.08} className="h-full">
-                <a
-                  href={channel.href}
-                  {...(channel.external && { target: "_blank", rel: "noopener noreferrer" })}
-                  className="ds-tile ds-tile-link group flex h-full flex-col items-center gap-3 px-6 py-10 text-center"
-                >
-                  <span className="mb-1 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-muted text-brand transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100">
-                    {channel.icon}
-                  </span>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-faint">
-                    {channel.label}
-                  </span>
-                  <span className="flex items-center gap-1.5 text-lg font-semibold text-heading">
-                    {channel.value}
-                    {channel.external && <span className="text-brand"><ExternalIcon /></span>}
-                  </span>
-                  <span className="text-sm leading-relaxed text-muted">{channel.note}</span>
-                </a>
+              <Reveal key={office.city} delay={i * 0.08}>
+                <div className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#0A2540] mb-1">{office.city}</h3>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{office.country}</p>
+                  </div>
+                  <a
+                    href={`mailto:${office.email}`}
+                    className="mt-6 flex items-center gap-2 text-xs font-bold text-[#156EB0] hover:underline"
+                  >
+                    <MailIcon size={14} />
+                    <span className="truncate">{office.email}</span>
+                  </a>
+                </div>
               </Reveal>
             ))}
           </div>
 
-          <p className="mx-auto mt-10 max-w-md rounded-xl border border-primary/20 bg-brand-muted px-5 py-4 text-center text-sm text-muted">
-            <strong className="text-fg">Response time:</strong> We typically reply within
-            one business day.
-          </p>
         </div>
       </section>
 
-      {/* Defaults point at /contact — retargeted here so the band does not
-          offer the page you are already on. */}
+      {/* CTA BAND */}
       <CtaBand
-        title="Not sure who to ask for?"
-        description="Tell us what you are building and we will put the right engineers on the call."
+        title="Ready to build what's next?"
+        description="Let's start the conversation."
         primaryLabel="Email Our Team"
         primaryHref="mailto:sales@citiuscomm.com"
         secondaryLabel="Explore Solutions"
         secondaryHref="/solutions/services"
       />
+
     </main>
   );
 }
+

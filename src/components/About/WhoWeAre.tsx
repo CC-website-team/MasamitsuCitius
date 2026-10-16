@@ -93,7 +93,7 @@ const cards: WhoWeAreCard[] = [
  * any opaque fill here would re-introduce the horizontal seam under the hero.
  */
 const WhoWeAre = () => (
-  <section id="about" className="relative bg-transparent py-20 md:py-28 lg:py-32">
+  <section id="about" className="relative bg-transparent py-12 md:py-16 lg:py-20">
     <div className="container relative z-10">
       {/* Level-2 anchor for the page outline — the cards below are all h3. */}
       <h2 className="sr-only">Vision, mission, and how we work</h2>

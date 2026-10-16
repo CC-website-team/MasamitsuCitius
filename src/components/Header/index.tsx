@@ -1,163 +1,160 @@
 "use client";
-import Image from "next/image";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import menuData from "./menuData";
-
-const ChevronDown = () => (
-  <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-  </svg>
-);
+import MasamitsuCitiusLogo from "@/components/Common/MasamitsuCitiusLogo";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
-  const [openIndex, setOpenIndex] = useState(-1);
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setSticky(window.scrollY >= 80);
+    const onScroll = () => setSticky(window.scrollY >= 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleSubmenu = (index: number) =>
-    setOpenIndex(openIndex === index ? -1 : index);
-
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
-        sticky
-          ? "border-b border-edge bg-canvas/95 backdrop-blur-md"
-          : "bg-transparent"
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 bg-white ${
+        sticky ? "shadow-md py-2.5 sm:py-3" : "py-3 sm:py-3.5 border-b border-slate-100"
       }`}
     >
-      <div className="container">
-        <div className="relative -mx-4 flex items-center justify-between">
-
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="w-52 max-w-full px-4 xl:mr-12">
+          <Link href="/" className="flex items-center group">
+            <MasamitsuCitiusLogo className="h-11 sm:h-12 md:h-[50px] lg:h-[52px] xl:h-[54px] w-auto transition-all duration-300" />
+          </Link>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center space-x-7 xl:space-x-9">
+            {menuData.map((item) => {
+              const isActive =
+                item.path === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.path);
+
+              return (
+                <Link
+                  key={item.id}
+                  href={item.path}
+                  className={`relative py-1 text-[14px] font-medium transition-colors duration-150 ${
+                    isActive
+                      ? "text-[#142B45] font-bold"
+                      : "text-slate-600 hover:text-[#142B45]"
+                  }`}
+                >
+                  {item.title}
+                  {isActive && (
+                    <span className="absolute -bottom-1.5 left-0 right-0 h-[2.5px] rounded-full bg-[#C9232C]" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Right CTA Button */}
+          <div className="hidden lg:flex items-center">
             <Link
-              href="/"
-              className={`block w-full ${sticky ? "py-4 lg:py-2" : "py-7"}`}
+              href="/contact"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#142B45] px-5 py-2.5 text-xs sm:text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#1a385a] focus:outline-none"
             >
-              <Image
-                src="/images/logo/Logo-wbg.svg"
-                alt="Citiuscomm"
-                width={130}
-                height={30}
-                className="w-auto"
-                priority
-              />
+              <span>Contact Us</span>
+              <svg
+                className="h-4 w-4 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5L19 10m0 0l-5.5 5.5M19 10H5"
+                />
+              </svg>
             </Link>
           </div>
 
-          {/* Nav sits right; the toggle that used to anchor this edge is gone. */}
-          <div className="flex w-full items-center justify-end px-4">
-
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setNavbarOpen(!navbarOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={navbarOpen}
-              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-md p-2 text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:hidden"
-            >
-              <span className={`block h-0.5 w-6 bg-current transition-all duration-200 ${navbarOpen ? "translate-y-[7px] rotate-45" : "mb-1.5"}`} />
-              <span className={`block h-0.5 w-6 bg-current transition-all duration-200 ${navbarOpen ? "opacity-0" : "mb-1.5"}`} />
-              <span className={`block h-0.5 w-6 bg-current transition-all duration-200 ${navbarOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
-            </button>
-
-            {/* Nav */}
-            <nav
-              className={`absolute right-0 top-full z-30 w-[260px] rounded-xl border border-edge bg-canvas px-5 py-4 shadow-xl transition-all duration-200 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:opacity-100 ${
-                navbarOpen ? "visible opacity-100" : "invisible opacity-0"
+          {/* Mobile hamburger toggle */}
+          <button
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            aria-label="Toggle Navigation Menu"
+            className="lg:hidden rounded-lg p-2 text-slate-700 hover:bg-slate-100 focus:outline-none"
+          >
+            <span
+              className={`block h-0.5 w-6 bg-current transition-all duration-200 ${
+                navbarOpen ? "translate-y-[7px] rotate-45" : "mb-1.5"
               }`}
-            >
-              <ul className="block lg:flex lg:items-center lg:space-x-10">
-                {menuData.map((item, index) => (
-                  <li key={index} className="group relative">
-
-                    {/* Simple link (no submenu) */}
-                    {item.path && !item.submenu ? (
-                      <Link
-                        href={item.path}
-                        onClick={() => setNavbarOpen(false)}
-                        className={`flex items-center py-2.5 text-sm font-medium transition-colors duration-150 lg:py-7 ${
-                          pathname === item.path
-                            ? "text-brand"
-                            : "text-muted hover:text-fg"
-                        }`}
-                      >
-                        {item.title}
-                      </Link>
-
-                    ) : item.path && item.submenu ? (
-                      <>
-                        {/* Desktop: link + hover dropdown */}
-                        <Link
-                          href={item.path}
-                          className={`hidden items-center gap-1 py-2.5 text-sm font-medium transition-colors duration-150 lg:inline-flex lg:py-7 ${
-                            pathname.startsWith(item.path)
-                              ? "text-brand"
-                              : "text-muted hover:text-fg"
-                          }`}
-                        >
-                          {item.title}
-                          <ChevronDown />
-                        </Link>
-                        {/* Mobile: toggle only */}
-                        <button
-                          onClick={() => handleSubmenu(index)}
-                          className="flex w-full items-center justify-between py-2.5 text-sm font-medium text-muted hover:text-fg lg:hidden"
-                        >
-                          {item.title}
-                          <ChevronDown />
-                        </button>
-                      </>
-
-                    ) : (
-                      <button
-                        onClick={() => handleSubmenu(index)}
-                        className={`flex w-full items-center justify-between py-2.5 text-sm font-medium transition-colors duration-150 lg:inline-flex lg:w-auto lg:gap-1 lg:py-7 ${
-                          item.activeMatch && pathname.startsWith(item.activeMatch)
-                            ? "text-brand"
-                            : "text-muted hover:text-fg"
-                        }`}
-                      >
-                        {item.title}
-                        <ChevronDown />
-                      </button>
-                    )}
-
-                    {/* Dropdown */}
-                    {item.submenu && (
-                      <div
-                        className={`rounded-xl border border-edge bg-canvas shadow-lg transition-all duration-200 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-[220px] lg:p-2 lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-focus-within:visible lg:group-focus-within:opacity-100 ${
-                          openIndex === index ? "block" : "hidden lg:block"
-                        }`}
-                      >
-                        {item.submenu.map((sub, i) => (
-                          <Link
-                            href={sub.path}
-                            key={i}
-                            onClick={() => { setNavbarOpen(false); setOpenIndex(-1); }}
-                            className="block rounded-lg px-3 py-2.5 text-sm text-muted transition-colors hover:bg-canvas-subtle hover:text-fg"
-                          >
-                            {sub.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
+            />
+            <span
+              className={`block h-0.5 w-6 bg-current transition-all duration-200 ${
+                navbarOpen ? "opacity-0" : "mb-1.5"
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-current transition-all duration-200 ${
+                navbarOpen ? "-translate-y-[7px] -rotate-45" : ""
+              }`}
+            />
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {navbarOpen && (
+        <div className="lg:hidden bg-white border-b border-slate-200 px-6 py-4 shadow-lg">
+          <div className="flex flex-col space-y-3">
+            {menuData.map((item) => {
+              const isActive =
+                item.path === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.path);
+
+              return (
+                <Link
+                  key={item.id}
+                  href={item.path}
+                  onClick={() => setNavbarOpen(false)}
+                  className={`py-2 text-base font-medium transition-colors ${
+                    isActive
+                      ? "text-[#C9232C] font-bold"
+                      : "text-slate-700 hover:text-[#142B45]"
+                  }`}
+                >
+                  {item.title}
+                </Link>
+              );
+            })}
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                onClick={() => setNavbarOpen(false)}
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#142B45] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1a385a]"
+              >
+                <span>Contact Us</span>
+                <svg
+                  className="h-4 w-4 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5L19 10m0 0l-5.5 5.5M19 10H5"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

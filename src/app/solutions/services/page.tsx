@@ -1,42 +1,41 @@
-import CtaBand from "@/components/CtaBand";
-import PageHero from "@/components/PageHero";
-import PageBackdrop from "@/components/ui/PageBackdrop";
-import ServiceCards from "./ServiceCards";
+import { solutionsData } from "@/data/solutionsData";
+import SolutionsHero from "@/components/Solutions/SolutionsHero";
+import SolutionsSubNav from "@/components/Solutions/SolutionsSubNav";
+import SolutionSectionCard from "@/components/Solutions/SolutionSectionCard";
+import SolutionsProcess from "@/components/Solutions/SolutionsProcess";
+import SolutionsCtaBanner from "@/components/Solutions/SolutionsCtaBanner";
 
 export const metadata = {
-  title: "Services | Citiuscomm",
+  title: "Solutions | Citiuscomm",
   description:
-    "Detailed capabilities across data center, ICT infrastructure, cybersecurity, 5G networks, cloud engineering, and NOC operations.",
+    "End-to-end technology solutions that help businesses, communities and industries stay ahead. Explore Networking & FTTx, Data Centre, Cyber Security, Managed Services, Electric Mobility, and IoT & Industrial Automation.",
 };
 
-const ServicesPage = () => (
-  <main className="relative bg-canvas">
-    {/* One dot grid for the whole page — the hero opts out of its own via pattern={false}. */}
-    <PageBackdrop />
+export default function SolutionsPage() {
+  return (
+    <main className="relative bg-[#FAFAFC] text-slate-900 min-h-screen">
+      {/* 1. Hero Section */}
+      <SolutionsHero />
 
-    <div className="relative z-10">
-      <PageHero
-        eyebrow="Our Services"
-        title="Six Practices."
-        highlight="One Accountable Partner."
-        description="Every practice is delivered turnkey: design, sourcing, deployment, integration, and operations, so there is always a single throat to choke and a single team to call."
-        pattern={false}
-      />
+      {/* 2. Sticky Sub-Nav Tabs */}
+      <SolutionsSubNav />
 
-      {/* Bottom padding only: the hero above owns the gap, so adjacent sections
-          never stack their padding into a dead band. */}
-      <section className="bg-transparent pb-16 md:pb-20 lg:pb-24">
-        <div className="container">
-          {/* Level-2 anchor for the outline — each practice card below is an h3. */}
-          <h2 className="sr-only">Our practices</h2>
-          <ServiceCards />
-        </div>
-      </section>
+      {/* 3. The 6 Alternating Solution Sections */}
+      <div className="relative">
+        {solutionsData.map((item, index) => (
+          <SolutionSectionCard
+            key={item.slug}
+            item={item}
+            isLast={index === solutionsData.length - 1}
+          />
+        ))}
+      </div>
 
-      {/* Secondary defaults to this page — sent to industries instead. */}
-      <CtaBand secondaryLabel="See the Industries We Serve" secondaryHref="/solutions/industries" />
-    </div>
-  </main>
-);
+      {/* 4. Process Section ("From possibility to progress.") */}
+      <SolutionsProcess />
 
-export default ServicesPage;
+      {/* 5. Opportunity CTA Banner */}
+      <SolutionsCtaBanner />
+    </main>
+  );
+}

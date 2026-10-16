@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@600;700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 @import 'tailwindcss';
 
@@ -19,56 +20,56 @@
   --color-black: #121723;
 
   /* ---- Citiuscomm brand ---- */
-  --color-primary:   #156EB0;
+  --color-primary: #156EB0;
   --color-secondary: #0A2540;
-  --color-accent:    #FF7A00;
+  --color-accent: #FF7A00;
 
   /* ---- Design-system semantic tokens (see tokens.css) ---- */
-  --color-canvas:        var(--ds-canvas);
+  --color-canvas: var(--ds-canvas);
   --color-canvas-subtle: var(--ds-canvas-subtle);
-  --color-canvas-muted:  var(--ds-canvas-muted);
-  --color-canvas-tint:      var(--ds-canvas-tint);
+  --color-canvas-muted: var(--ds-canvas-muted);
+  --color-canvas-tint: var(--ds-canvas-tint);
   --color-canvas-tint-flat: var(--ds-canvas-tint-flat);
-  --color-surface:       var(--ds-surface);
-  --color-surface-2:     var(--ds-surface-2);
-  --color-edge:          var(--ds-edge);
-  --color-edge-2:        var(--ds-edge-2);
-  --color-dots:          var(--ds-dots);
-  --color-fg:            var(--ds-fg);
-  --color-heading:       var(--ds-heading);
-  --color-muted:         var(--ds-muted);
-  --color-faint:         var(--ds-faint);
-  --color-brand:         var(--ds-brand);
-  --color-brand-muted:   var(--ds-brand-muted);
-  --color-navy:          var(--ds-navy);
-  --color-navy-2:        var(--ds-navy-2);
-  --color-on-dark:       var(--ds-on-dark);
+  --color-surface: var(--ds-surface);
+  --color-surface-2: var(--ds-surface-2);
+  --color-edge: var(--ds-edge);
+  --color-edge-2: var(--ds-edge-2);
+  --color-dots: var(--ds-dots);
+  --color-fg: var(--ds-fg);
+  --color-heading: var(--ds-heading);
+  --color-muted: var(--ds-muted);
+  --color-faint: var(--ds-faint);
+  --color-brand: var(--ds-brand);
+  --color-brand-muted: var(--ds-brand-muted);
+  --color-navy: var(--ds-navy);
+  --color-navy-2: var(--ds-navy-2);
+  --color-on-dark: var(--ds-on-dark);
   --color-on-dark-muted: var(--ds-on-dark-muted);
   --color-dots-inverted: var(--ds-dots-inverted);
-  --color-cta:           var(--ds-cta);
-  --color-cta-hover:     var(--ds-cta-hover);
-  --color-cta-muted:     var(--ds-cta-muted);
-  --color-ds-success:    var(--ds-success);
-  --color-ds-error:      var(--ds-error);
+  --color-cta: var(--ds-cta);
+  --color-cta-hover: var(--ds-cta-hover);
+  --color-cta-muted: var(--ds-cta-muted);
+  --color-ds-success: var(--ds-success);
+  --color-ds-error: var(--ds-error);
 
   /* ---- Legacy compatibility ---- */
-  --color-light-bg:         #f8fafc;
-  --color-text:             #111827;
-  --color-yellow:           #fbb040;
-  --color-body-color:       #788293;
-  --color-stroke-stroke:    #e3e8ef;
+  --color-light-bg: #f8fafc;
+  --color-text: #111827;
+  --color-yellow: #fbb040;
+  --color-body-color: #788293;
+  --color-stroke-stroke: #e3e8ef;
 
-  --color-gray-50:    #f9fafb;
-  --color-gray-100:   #f3f4f6;
-  --color-gray-200:   #e5e7eb;
-  --color-gray-300:   #d1d5db;
-  --color-gray-400:   #9ca3af;
-  --color-gray-500:   #6b7280;
-  --color-gray-600:   #4b5563;
-  --color-gray-700:   #374151;
-  --color-gray-800:   #1f2937;
-  --color-gray-900:   #111827;
-  --color-gray-950:   #030712;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
   --color-gray-light: #f0f2f9;
 
   /* ---- Elevation ladder ----
@@ -79,24 +80,92 @@
   --shadow-e2: 0 2px 4px rgba(10, 37, 64, 0.04), 0 4px 12px rgba(10, 37, 64, 0.08);
   --shadow-e3: 0 8px 24px rgba(10, 37, 64, 0.10), 0 2px 6px rgba(10, 37, 64, 0.06);
 
-  --shadow-sign-up:     0px 5px 10px rgba(4, 10, 34, 0.2);
-  --shadow-one:         0px 2px 3px rgba(7, 7, 77, 0.05);
-  --shadow-two:         0px 5px 10px rgba(6, 8, 15, 0.1);
-  --shadow-three:       0px 5px 15px rgba(6, 8, 15, 0.05);
-  --shadow-sticky:      inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
-  --shadow-feature-2:   0px 10px 40px rgba(48, 86, 211, 0.12);
-  --shadow-submit:      0px 5px 20px rgba(4, 10, 34, 0.1);
-  --shadow-btn:         0px 1px 2px rgba(4, 10, 34, 0.15);
-  --shadow-btn-hover:   0px 1px 2px rgba(0, 0, 0, 0.15);
-  --shadow-btn-light:   0px 1px 2px rgba(0, 0, 0, 0.1);
-  --drop-shadow-three:  0px 5px 15px rgba(6, 8, 15, 0.05);
+  --shadow-sign-up: 0px 5px 10px rgba(4, 10, 34, 0.2);
+  --shadow-one: 0px 2px 3px rgba(7, 7, 77, 0.05);
+  --shadow-two: 0px 5px 10px rgba(6, 8, 15, 0.1);
+  --shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
+  --shadow-sticky: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  --shadow-feature-2: 0px 10px 40px rgba(48, 86, 211, 0.12);
+  --shadow-submit: 0px 5px 20px rgba(4, 10, 34, 0.1);
+  --shadow-btn: 0px 1px 2px rgba(4, 10, 34, 0.15);
+  --shadow-btn-hover: 0px 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-btn-light: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  --drop-shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
 }
 
-/* ---- Container ---- */
+/* ---- Container & Spacing System Utilities ---- */
 @utility container {
   margin-inline: auto;
-  padding-inline: 1rem;
   max-width: 1200px;
+  padding-inline: 20px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    padding-inline: 32px;
+  }
+}
+
+@utility ds-container {
+  margin-inline: auto;
+  max-width: 1200px;
+  padding-inline: 20px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    padding-inline: 32px;
+  }
+}
+
+@utility ds-section-py {
+  padding-block: 48px;
+
+  @media (min-width: 768px) {
+    padding-block: 64px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-block: 80px;
+  }
+}
+
+@utility ds-major-gap {
+  gap: 48px;
+
+  @media (min-width: 768px) {
+    gap: 64px;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 80px;
+  }
+}
+
+@utility ds-grid-gap {
+  gap: 16px;
+
+  @media (min-width: 768px) {
+    gap: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 24px;
+  }
+}
+
+@utility ds-heading-to-para {
+  margin-bottom: 20px;
+}
+
+@utility bg-section-alt {
+  background: linear-gradient(115deg, #ffffff, #f5f5f5);
+}
+
+.bg-section-alt {
+  background: linear-gradient(115deg, #ffffff, #f5f5f5);
+}
+
+@utility ds-para-to-cta {
+  margin-bottom: 28px;
 }
 
 /* ---- Tile ----
@@ -154,6 +223,7 @@
    hairline instead of tinting it brand — brand-on-brand is invisible, and
    brand-on-navy is too dark a change to register. */
 @layer components {
+
   .ds-tile-dark.ds-tile-link:hover,
   .ds-tile-brand.ds-tile-link:hover {
     border-color: rgba(255, 255, 255, 0.4);
@@ -162,6 +232,7 @@
 
 /* ---- Tailwind v4 border-color compatibility ---- */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -176,6 +247,7 @@
   & .header-logo {
     @apply py-5 lg:py-2;
   }
+
   & .menu-scroll.active {
     @apply opacity-70;
   }
@@ -200,13 +272,13 @@
 }
 
 @utility dot {
-  input#togglePlan:checked ~ & {
+  input#togglePlan:checked~& {
     @apply translate-x-full;
   }
 }
 
 @utility box {
-  input#checkboxLabel:checked ~ & span {
+  input#checkboxLabel:checked~& span {
     @apply opacity-100;
   }
 }
@@ -219,7 +291,12 @@
     background-color: var(--ds-canvas);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     color: var(--ds-fg);
@@ -248,24 +325,61 @@
    ================================================================ */
 
 @keyframes ds-fade-up {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes ds-fade-left {
-  from { opacity: 0; transform: translateX(-28px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes ds-fade-right {
-  from { opacity: 0; transform: translateX(28px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes ds-scale-in {
-  from { opacity: 0; transform: scale(0.95); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
+
 @keyframes ds-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .ds-reveal,
@@ -274,24 +388,34 @@
 .ds-reveal-scale {
   opacity: 0;
 }
+
 .ds-reveal.ds-visible {
   animation: ds-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
 .ds-reveal-left.ds-visible {
   animation: ds-fade-left 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
 .ds-reveal-right.ds-visible {
   animation: ds-fade-right 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
 .ds-reveal-scale.ds-visible {
   animation: ds-scale-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Light pulse traveling along an SVG path (pathLength=100) */
 @keyframes ds-flow {
-  from { stroke-dashoffset: 100; }
-  to   { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
+
 .ds-flow {
   stroke-dasharray: 16 84;
   stroke-dashoffset: 100;
@@ -300,10 +424,22 @@
 
 /* Expanding ping ring on network nodes */
 @keyframes ds-ping {
-  0%   { transform: scale(0.6); opacity: 0.55; }
-  80%  { transform: scale(2);   opacity: 0; }
-  100% { transform: scale(2);   opacity: 0; }
+  0% {
+    transform: scale(0.6);
+    opacity: 0.55;
+  }
+
+  80% {
+    transform: scale(2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
+
 .ds-ping {
   transform-origin: center;
   transform-box: fill-box;
@@ -312,22 +448,34 @@
 
 /* Gentle float for decorative elements */
 @keyframes ds-float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
+
 .ds-float {
   animation: ds-float 6s ease-in-out infinite;
 }
 
 /* Stroke draw-on for line icons (shapes need pathLength=100) */
 @keyframes ds-draw {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
+
 .ds-draw :is(path, circle, rect, line, polyline, ellipse) {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
   fill: none;
 }
+
 .ds-draw.ds-visible :is(path, circle, rect, line, polyline, ellipse),
 .ds-visible .ds-draw :is(path, circle, rect, line, polyline, ellipse) {
   animation: ds-draw 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
@@ -335,24 +483,32 @@
 
 /* Logo marquee */
 @keyframes ds-marquee {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-50%, 0, 0); }
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
+
 .ds-marquee-track {
   display: flex;
   width: max-content;
   animation: ds-marquee 36s linear infinite;
   will-change: transform;
 }
+
 .ds-marquee-track:hover {
   animation-play-state: paused;
 }
 
 /* Dot-grid background — color/opacity via text utilities */
-.ds-dots {
-  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
-  background-size: 26px 26px;
+.partners-hero {
+  background: #ffffff;
+  background-image: none;
 }
+
 /* Horizontal edge fade for a marquee track.
    A mask, not a pair of gradient overlays: overlays have to be painted in the
    page's background colour, which means painting a solid strip over the dot
@@ -362,6 +518,7 @@
   -webkit-mask-image: linear-gradient(to right, transparent, #000 6rem, #000 calc(100% - 6rem), transparent);
   mask-image: linear-gradient(to right, transparent, #000 6rem, #000 calc(100% - 6rem), transparent);
 }
+
 @media (min-width: 768px) {
   .ds-fade-x {
     -webkit-mask-image: linear-gradient(to right, transparent, #000 12rem, #000 calc(100% - 12rem), transparent);
@@ -379,28 +536,29 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(21, 110, 176, 0.07) 50%,
-    transparent 60%
-  );
+  background: linear-gradient(105deg,
+      transparent 40%,
+      rgba(21, 110, 176, 0.07) 50%,
+      transparent 60%);
   transform: translateX(-150%);
   transition: transform 0.8s ease;
   pointer-events: none;
 }
+
 .ds-sheen:hover::before {
   transform: translateX(150%);
 }
 
 /* Reduced motion: show everything, animate nothing */
 @media (prefers-reduced-motion: reduce) {
+
   .ds-reveal,
   .ds-reveal-left,
   .ds-reveal-right,
   .ds-reveal-scale {
     opacity: 1;
   }
+
   .ds-reveal.ds-visible,
   .ds-reveal-left.ds-visible,
   .ds-reveal-right.ds-visible,
@@ -411,23 +569,28 @@
   .ds-marquee-track {
     animation: none;
   }
+
   .ds-flow {
     stroke-dasharray: none;
     stroke-dashoffset: 0;
     opacity: 0.5;
   }
+
   .ds-draw :is(path, circle, rect, line, polyline, ellipse) {
     stroke-dasharray: none;
     stroke-dashoffset: 0;
     animation: none;
   }
+
   .ds-sheen::before {
     display: none;
   }
+
   /* Keep the elevation change as the hover cue; drop only the movement. */
   .ds-tile-link {
     transition: box-shadow 200ms ease, border-color 200ms ease;
   }
+
   .ds-tile-link:hover {
     transform: none;
   }
@@ -437,10 +600,13 @@
 
 /* Core node pulsing */
 @keyframes core-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     r: 16;
     opacity: 1;
   }
+
   50% {
     r: 18;
     opacity: 0.8;
@@ -458,6 +624,7 @@
     opacity: 0.4;
     stroke-width: 1;
   }
+
   100% {
     r: 120;
     opacity: 0;
@@ -476,6 +643,7 @@
     r: 18;
     opacity: 0.5;
   }
+
   100% {
     r: 28;
     opacity: 0;
@@ -488,10 +656,13 @@
 
 /* Individual node pulsing */
 @keyframes node-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     r: 10;
     opacity: 1;
   }
+
   50% {
     r: 12;
     opacity: 0.7;
@@ -504,9 +675,12 @@
 
 /* Core twinkle */
 @keyframes twinkle {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.2;
   }
+
   50% {
     opacity: 0.8;
   }
@@ -518,10 +692,13 @@
 
 /* Connection line glow */
 @keyframes line-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     stroke-width: 1.5;
     opacity: 0.5;
   }
+
   50% {
     stroke-width: 2;
     opacity: 0.8;
@@ -539,6 +716,7 @@
 
 /* Reduced motion: disable all network animations */
 @media (prefers-reduced-motion: reduce) {
+
   .ds-core-pulse,
   .ds-ring-expand,
   .ds-node-ring,
@@ -552,7 +730,45 @@
 
 /* ---- Checkbox ---- */
 @layer components {
-  input[type="checkbox"]:checked ~ label span svg {
+  input[type="checkbox"]:checked~label span svg {
     @apply inline-flex;
   }
+}
+
+/* ---- Subtle 2-3px horizontal scrollbar for navigation ---- */
+.custom-thin-scrollbar,
+.no-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.custom-thin-scrollbar::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  height: 3px;
+}
+
+.custom-thin-scrollbar::-webkit-scrollbar-track,
+.no-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+}
+
+.custom-thin-scrollbar::-webkit-scrollbar-thumb,
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.custom-thin-scrollbar::-webkit-scrollbar-thumb:hover,
+.no-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ---- Seamless Carousel Slider Hide Scrollbar ---- */
+.slider-hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.slider-hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

@@ -21,7 +21,7 @@ type PageHeroProps = {
  */
 const PageHero = ({ title, highlight, description, eyebrow, pattern = true }: PageHeroProps) => (
   <section
-    className={`relative z-10 overflow-hidden pb-16 pt-[120px] md:pb-20 md:pt-[150px] xl:pt-[170px] ${
+    className={`relative z-10 overflow-hidden pt-[110px] pb-10 md:pt-[130px] md:pb-12 lg:pt-[140px] lg:pb-14 ${
       pattern ? "bg-canvas" : "bg-transparent"
     }`}
   >

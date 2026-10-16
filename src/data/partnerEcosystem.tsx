@@ -27,6 +27,32 @@ export type EcosystemPartner = {
 
 const partnerEcosystem: EcosystemPartner[] = [
   {
+    name: "Adopt",
+    logo: "/images/Partners/Adopt logo.svg",
+    sector: "Systems Integration",
+    description: "Systems integration and managed services for network infrastructure deployment.",
+    // TODO(url): no confirmed official domain. Also appears in citiusProducts.ts
+    // as one of our own ventures — confirm which list it actually belongs in.
+    url: "https://adoptnettech.com/",
+  },
+  {
+    name: "Xconics",
+    logo: "/images/Partners/xconics logo.svg",
+    sector: "Systems Integration",
+    description: "Technology solutions and integration services for enterprise networks.",
+    // TODO(url): no confirmed official domain. Also appears in citiusProducts.ts
+    // as one of our own ventures — confirm which list it actually belongs in.
+    url: "https://www.xconics.com/",
+  },
+  {
+    name: "EMA",
+    logo: "/images/Partners/EMA logo.svg",
+    sector: "Enterprise",
+    description: "Enterprise mobility and communications solutions for distributed workforces.",
+    // TODO(url): no confirmed official domain. "EMA" is ambiguous on its own.
+    url: "https://easemyai.com/",
+  },
+  {
     name: "Cisco",
     logo: "/images/Partners/Cicso.svg",
     sector: "Telecom",
@@ -166,32 +192,8 @@ const partnerEcosystem: EcosystemPartner[] = [
     description: "API testing and quality assurance tools for continuous integration pipelines.",
     url: "https://www.smartbear.com",
   },
-  {
-    name: "Adopt",
-    logo: "/images/Partners/Adopt logo.svg",
-    sector: "Systems Integration",
-    description: "Systems integration and managed services for network infrastructure deployment.",
-    // TODO(url): no confirmed official domain. Also appears in citiusProducts.ts
-    // as one of our own ventures — confirm which list it actually belongs in.
-    url: "#",
-  },
-  {
-    name: "Xconics",
-    logo: "/images/Partners/xconics logo.svg",
-    sector: "Systems Integration",
-    description: "Technology solutions and integration services for enterprise networks.",
-    // TODO(url): no confirmed official domain. Also appears in citiusProducts.ts
-    // as one of our own ventures — confirm which list it actually belongs in.
-    url: "#",
-  },
-  {
-    name: "EMA",
-    logo: "/images/Partners/EMA logo.svg",
-    sector: "Enterprise",
-    description: "Enterprise mobility and communications solutions for distributed workforces.",
-    // TODO(url): no confirmed official domain. "EMA" is ambiguous on its own.
-    url: "#",
-  },
+
+
   {
     name: "Nearby",
     logo: "/images/Partners/nearby.svg",

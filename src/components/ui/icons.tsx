@@ -271,3 +271,36 @@ export const ChevronRightIcon = (props: IconProps) => (
     <path d="M9 5.5l6.5 6.5L9 18.5" pathLength={100} />
   </Icon>
 );
+
+/* ---------- AI Solutions pillars ---------- */
+
+export const SparklesIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z" pathLength={100} />
+    <path d="M18 14l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" pathLength={100} />
+    <path d="M5 16l.75 2.25L8 19l-2.25.75L5 22l-.75-2.25L2 19l2.25-.75L5 16z" pathLength={100} />
+  </Icon>
+);
+
+export const ChartBarIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="M4 20h16" pathLength={100} />
+    <rect x="5" y="10" width="3" height="10" rx="0.5" pathLength={100} />
+    <rect x="10.5" y="4" width="3" height="16" rx="0.5" pathLength={100} />
+    <rect x="16" y="7" width="3" height="13" rx="0.5" pathLength={100} />
+  </Icon>
+);
+
+export const LightningBoltIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="M13 2L4.5 13H12l-1 9 8.5-11H12l1-9z" pathLength={100} />
+  </Icon>
+);
+
+export const CubeIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" pathLength={100} />
+    <path d="M12 22V12" pathLength={100} />
+    <path d="M21 7l-9 5-9-5" pathLength={100} />
+  </Icon>
+);

@@ -1,138 +1,73 @@
-'use client';
+"use client";
 
-import { type ReactNode } from 'react';
-import Button from '@/components/ui/Button';
-import NodeMesh from './NodeMesh';
+import React from "react";
+import Link from "next/link";
 
-/**
- * NetworkHero
- *
- * Two columns from lg up: copy left-aligned on the left, a breathing node mesh
- * on the right. Below lg the two stack, copy first, with the mesh reduced to a
- * band underneath. Below sm the mesh is dropped rather than shrunk — at that
- * width the 36px lattice compresses into speckle and stops reading as a mesh
- * at all, so it earns nothing and still costs a raf loop.
- *
- * The fibre-convergence animation that used to sit behind this copy now lives
- * in FibreConvergence.tsx, unrendered but intact.
- */
+export default function NetworkHero() {
+  const heroGifPath = "/images/services/CCTV Camera Pan.gif";
 
-export interface NetworkHeroProps {
-  eyebrow?: string;
-  headlineLead?: string;
-  headlineMain?: string;
-  subhead?: ReactNode;
-  credibility?: string;
-  proof?: string[];
-  primaryCta?: { label: string; href: string };
-  secondaryCta?: { label: string; href: string };
-  /** Change to reshape the whole mesh. */
-  seed?: number;
-}
-
-const DEFAULTS = {
-  eyebrow: 'Enterprise infrastructure · Networks · Cloud · Security',
-  headlineLead: 'Complex infrastructure',
-  headlineMain: 'One accountable partner',
-  subhead:
-    'We design, deploy and operate network, data centre, cloud and security infrastructure for telecom carriers, banks and government bodies.',
-  credibility: 'Built to execute mission-critical infrastructure at national scale.',
-  // Only the two verified figures. "100M+ subscribers managed" was dropped
-  // along with the node count — see the note in Home/ClientMarquee.
-  proof: ['30+ years of combined expertise', '20+ partners'],
-  primaryCta: { label: 'Start a conversation', href: '/contact' },
-  secondaryCta: { label: 'See what we deliver', href: '/solutions/services' },
-};
-
-export function NetworkHero({
-  eyebrow = DEFAULTS.eyebrow,
-  headlineLead = DEFAULTS.headlineLead,
-  headlineMain = DEFAULTS.headlineMain,
-  subhead = DEFAULTS.subhead,
-  credibility = DEFAULTS.credibility,
-  proof = DEFAULTS.proof,
-  primaryCta = DEFAULTS.primaryCta,
-  secondaryCta = DEFAULTS.secondaryCta,
-  seed = 20260804,
-}: NetworkHeroProps) {
   return (
-    // No bottom padding: SectionShell sections below no longer carry their own
-    // top+bottom pair, so the next section's top padding is the only gap
-    // between the hero and what follows it. See SectionShell's `sizes` note.
-    <section
-      id="home"
-      className="relative overflow-hidden bg-transparent pt-[120px] md:pt-[150px] xl:pt-[170px]"
-    >
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-10 xl:px-16">
-        {/* Not a 50/50 split: at lg an even split starves the copy column and
-            wraps the two CTAs onto separate lines. Copy takes the larger share
-            until xl, where there is room for both to breathe. */}
-        <div className="grid items-center gap-14 lg:grid-cols-[1.3fr_1fr] lg:gap-10 xl:grid-cols-[1.1fr_1fr] xl:gap-16">
-          {/* ---- Copy ---- */}
-          <div className="max-w-[620px] text-left">
-            <p className="mb-6 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-faint">
-              <span aria-hidden className="h-px w-8 shrink-0 bg-cta" />
-              {eyebrow}
-            </p>
+    <section id="home" className="relative w-full min-h-screen flex items-center bg-[#07111E] pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
 
-            <h1 className="mb-5 text-4xl leading-[1.07] tracking-tight sm:text-5xl xl:text-[3.25rem]">
-              <span className="block font-semibold text-muted">{headlineLead}</span>
-              <span className="block text-heading">{headlineMain}</span>
+      {/* BACKGROUND CONTAINER WITH CCTV CAMERA PAN GIF */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden z-0 bg-[#07111E]">
+        <img
+          src={heroGifPath}
+          alt="MASAMITSU CITIUS CCTV Camera Background"
+          className="w-full h-full object-cover object-right lg:object-[80%_center] scale-[0.75] sm:scale-[0.78] lg:scale-[0.80] origin-right select-none pointer-events-none transition-transform duration-700"
+        />
+
+        {/* DARK NAVY GRADIENT OVERLAYS FOR OPTIMAL CONTRAST & READABILITY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07111E] via-[#07111E]/90 to-transparent z-10 w-full lg:w-[60%]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#07111E]/60 via-transparent to-[#07111E]/80 z-10" />
+      </div>
+
+      {/* HERO CONTENT CONTAINER */}
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8 relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+          {/* LEFT COLUMN — HEADLINE, DESCRIPTION & CTAs NEATLY ALIGNED */}
+          <div className="lg:col-span-8 space-y-6">
+
+            {/* Main Headline */}
+            <h1 className="font-extrabold tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] leading-[1.12]">
+              Technology for{" "}
+              <span className="text-[#176DB2]">Secure, Intelligent &amp;</span>{" "}
+              Resilient Infrastructure
             </h1>
 
-            <p className="mb-3 text-lg leading-relaxed text-muted">{subhead}</p>
-            <p className="mb-9 text-base leading-relaxed text-faint">{credibility}</p>
+            {/* Sub-paragraph */}
+            <p className="max-w-xl text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+              <strong className="text-white font-bold">MASAMITSU</strong> and{" "}
+              <strong className="text-white font-bold">CitiusComm</strong> together combine Japanese engineering expertise with Indian execution capabilities.The breath of services would cover surveillance, cybersecurity, system integration and critical infrastructure solutions for enterprises and government organizations.
+            </p>
 
-            <div className="mb-10 flex flex-col gap-3 sm:flex-row">
-              <Button variant="cta" size="lg" href={primaryCta.href}>
-                {primaryCta.label}
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Button>
-              {/* Both hero CTAs are the same size. The lg/md hierarchy pattern
-                  used in CtaBand is deliberately not applied here — side by side
-                  at the top of the page these read as a matched pair. */}
-              <Button variant="cta" size="lg" href={secondaryCta.href}>
-                {secondaryCta.label}
-              </Button>
+            {/* Action Buttons — Smooth transition to Red (#C9232C) on hover */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded bg-[#C9232C] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#a81a22] focus:outline-none"
+              >
+                <span>Request Consultation</span>
+                <span className="text-base font-bold">→</span>
+              </Link>
+
+              <Link
+                href="/solutions"
+                className="inline-flex items-center justify-center gap-2 rounded border-2 border-white/80 bg-white/10 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white focus:outline-none"
+              >
+                <span>Explore Solutions</span>
+              </Link>
             </div>
 
-            {/* Proof as one quiet line, not a panel of counters. */}
-            <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-faint">
-              {/* Separator trails its own item rather than leading the next, so
-                  a wrap leaves the rule at the end of a line instead of
-                  orphaning it at the start of the one below. */}
-              {proof.map((item, index) => (
-                <li key={item} className="flex items-center gap-4">
-                  <span>{item}</span>
-                  {index < proof.length - 1 && (
-                    <span aria-hidden className="h-3 w-px bg-edge-2" />
-                  )}
-                </li>
-              ))}
-            </ul>
           </div>
 
-          {/* ---- Mesh ----
-              The page-wide dot grid runs at a 26px step and the mesh sits on a
-              36px lattice; two regular point fields that close together can
-              moiré. The scrim knocks the grid back behind the mesh only, so the
-              texture still reads across the rest of the page. */}
-          <div className="relative hidden sm:block">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -inset-6 bg-canvas/70 [mask-image:radial-gradient(ellipse_72%_66%_at_50%_50%,black_35%,transparent_100%)]"
-            />
-            <NodeMesh
-              seed={seed}
-              className="relative h-[260px] w-full md:h-[320px] lg:aspect-[9/7] lg:h-auto"
-            />
-          </div>
+          {/* RIGHT COLUMN SPACE FOR UNCLUTTERED CCTV VISUAL */}
+          <div className="lg:col-span-4 relative hidden lg:block pointer-events-none" />
+
         </div>
       </div>
+
     </section>
   );
 }
-
-export default NetworkHero;

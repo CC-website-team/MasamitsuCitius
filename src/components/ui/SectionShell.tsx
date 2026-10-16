@@ -19,8 +19,8 @@ import type { ReactNode } from "react";
 type Tone = "light" | "tint" | "navy" | "navy-flat" | "brand";
 
 const tones: Record<Tone, string> = {
-  light: "bg-transparent",
-  tint: "bg-canvas-tint/70",
+  light: "bg-white",
+  tint: "bg-section-alt",
   navy: "bg-gradient-to-b from-navy to-navy-2",
   "navy-flat": "bg-navy",
   brand: "bg-brand",
@@ -52,8 +52,8 @@ const DOTTED: Tone[] = ["navy", "brand"];
  * this component.
  */
 const sizes = {
-  default: "pt-20 md:pt-24 lg:pt-28",
-  compact: "pt-12 md:pt-16",
+  default: "py-12 md:py-16 lg:py-20",
+  compact: "py-12 md:py-16 lg:py-20",
 } as const;
 
 interface SectionShellProps {

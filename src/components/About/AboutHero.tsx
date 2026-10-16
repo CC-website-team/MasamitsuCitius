@@ -226,11 +226,11 @@ const NetworkVisualization = () => (
 );
 
 const AboutHero = ({ eyebrow, title, highlight, description }: AboutHeroProps) => (
-  <section className="relative overflow-hidden bg-canvas pb-0 pt-[120px] md:pt-[150px] xl:pt-[170px]">
+  <section className="relative overflow-hidden bg-canvas pt-[110px] pb-10 md:pt-[130px] md:pb-12 lg:pt-[140px] lg:pb-14">
     <SectionPattern />
 
     <div className="container relative z-10">
-      <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="grid items-start gap-12 lg:grid-cols-2">
         {/* Left: Content */}
         <Reveal variant="left" className="max-w-xl">
           {eyebrow && (

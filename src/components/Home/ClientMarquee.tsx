@@ -1,23 +1,5 @@
-import Counter from "@/components/ui/Counter";
-import SectionAccent from "@/components/ui/SectionAccent";
 import SectionShell from "@/components/ui/SectionShell";
 import clientMarquee from "@/data/clientMarquee";
-
-/**
- * The two figures the site is allowed to claim. Deliberately only two: the
- * node count and the subscriber count that used to sit alongside them were
- * never verified against a source of record, so they have been dropped rather
- * than published. 20+ partners is supported by /partners, which lists 24 named
- * vendors in its ecosystem grid.
- *
- * These used to be their own navy band directly under the hero. They are proof
- * for the client list, not a claim that needs a section of its own, so they now
- * run as one slim line above it.
- */
-const stats = [
-  { value: "30+", label: "Years of combined expertise" },
-  { value: "20+", label: "Partners" },
-];
 
 /**
  * ClientMarquee — the customer logo scroll, and the three proof figures above
@@ -55,31 +37,20 @@ const TILE = "ds-tile mx-3 flex h-40 w-72 shrink-0 items-center justify-center p
 export default function ClientMarquee() {
   return (
     <SectionShell>
-      <div className="container mb-10 flex flex-col items-center text-center">
-        <SectionAccent className="mb-6" />
-
-        {/* One line, not a band. Figures in brand blue so they carry on white
-            without needing a fill behind them. */}
-        <dl className="mb-6 flex flex-wrap items-baseline justify-center gap-x-8 gap-y-2">
-          {stats.map(({ value, label }) => (
-            <div key={label} className="flex items-baseline gap-2">
-              <dt className="sr-only">{label}</dt>
-              <dd className="flex items-baseline gap-2">
-                <Counter value={value} className="text-xl font-bold text-brand" />
-                <span aria-hidden className="text-sm text-muted">
-                  {label}
-                </span>
-              </dd>
-            </div>
-          ))}
-        </dl>
-
-        <p className="text-xs font-semibold uppercase tracking-widest text-faint">
-          Trusted by carriers, broadcasters, and enterprises
-        </p>
+      {/* Left-aligned Section Header matching Hero container margins */}
+      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 mb-8 text-left">
+        <div className="mb-2.5 flex items-center gap-2">
+          <span className="h-0.5 w-6 rounded-full bg-[#C94F00]" />
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-[#C94F00]">
+            Ecosystem
+          </span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#19344D]">
+          Our Trusted Partners
+        </h2>
       </div>
 
-      <div className="relative">
+      <div className="relative mx-auto w-full max-w-[1200px] px-5 md:px-8">
         <div className="ds-fade-x overflow-hidden">
           <div
             className="ds-marquee-track"

@@ -24,7 +24,7 @@ export interface SolutionPillar {
 export const pillars: SolutionPillar[] = [
   {
     slug: "data-center",
-    title: "Data Center Solutions",
+    title: "Data Center, Cloud & IT Infrastructure",
     tagline: "Compute, storage, and networking engineered for uptime",
     description:
       "We design, build, and modernize data center infrastructure for carriers and enterprises, from rack and power planning to compute, storage, and network fabric, sourced through our OEM partnerships and delivered turnkey.",
@@ -39,7 +39,7 @@ export const pillars: SolutionPillar[] = [
   },
   {
     slug: "ict-infrastructure",
-    title: "ICT Infrastructure",
+    title: "Networking",
     tagline: "Enterprise and carrier networks, end to end",
     description:
       "Routing, switching, transmission, and unified communications, designed, deployed, and supported across multi-vendor environments with partners like Cisco, HPE, and Juniper.",
@@ -68,48 +68,33 @@ export const pillars: SolutionPillar[] = [
     icon: <ShieldIcon size={28} className="ds-draw" />,
   },
   {
-    slug: "telecom-networks",
-    title: "5G & Telecom Networks",
-    tagline: "Multi-generation rollout at carrier scale",
+    slug: "application-engineering-devsecops",
+    title: "Application Engineering & DevSecOps",
+    tagline: "Build better. Secure every release. Keep applications running.",
     description:
-      "From 2G to 5G and vRAN, we deliver radio and core network rollout, transmission, and RF engineering, backed by experience across 100K+ network sites.",
+      "Full lifecycle application engineering from custom development, UX design and microservices modernization to automated CI/CD pipelines, shift-left security and 24/7 SLA-backed continuous operations.",
     points: [
-      "2G–5G network rollout",
-      "vRAN and Open RAN readiness",
-      "RF planning and optimization",
-      "Transmission and microwave",
-      "Site build and integration",
-    ],
-    icon: <AntennaIcon size={28} className="ds-draw" />,
-  },
-  {
-    slug: "cloud-engineering",
-    title: "Cloud Engineering",
-    tagline: "Private, public, and hybrid, built for telco-grade workloads",
-    description:
-      "Cloud design, virtualization, and migration services that move enterprise and telco workloads onto scalable, cost-efficient platforms without disrupting operations.",
-    points: [
-      "Private and hybrid cloud build-outs",
-      "Virtualization and containerization",
-      "Workload migration",
-      "Cloud networking and security",
-      "Cost and capacity optimization",
-    ],
-    icon: <CloudIcon size={28} className="ds-draw" />,
-  },
-  {
-    slug: "noc-operations",
-    title: "OSS/BSS & NOC Operations",
-    tagline: "Network operations managed around the clock",
-    description:
-      "Round-the-clock network operations, monitoring, and OSS/BSS integration, the operational backbone behind carrier and enterprise networks.",
-    points: [
-      "24×7 NOC operations",
-      "Network monitoring and fault management",
-      "OSS/BSS integration",
-      "Performance reporting and SLAs",
-      "Field operations coordination",
+      "Custom enterprise application development (Web & Mobile)",
+      "Legacy modernisation & monolith-to-microservices",
+      "Shift-left pipeline security & compliance as code",
+      "CI/CD automation, IaC & Kubernetes enablement",
+      "24/7 SLA-backed managed support & observability",
     ],
     icon: <OpsIcon size={28} className="ds-draw" />,
+  },
+  {
+    slug: "cloud-ai-solutions",
+    title: "Cloud & AI Solutions",
+    tagline: "Cloud foundations that scale. Production AI that performs.",
+    description:
+      "Integrated hybrid multi-cloud infrastructure, automated landing zones, container orchestration, generative AI applications, computer vision, and 24/7 MLOps governance.",
+    points: [
+      "AWS, Azure, GCP & hybrid multi-cloud migration",
+      "Generative AI & enterprise LLM (RAG) applications",
+      "Predictive machine learning & data engineering pipelines",
+      "Kubernetes platform engineering & edge AI inference",
+      "MLOps governance, safety guardrails & FinOps cost control",
+    ],
+    icon: <CloudIcon size={28} className="ds-draw" />,
   },
 ];

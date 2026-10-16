@@ -1,62 +1,30 @@
-import { Menu } from "@/types/menu";
+export interface MenuItem {
+  id: number;
+  title: string;
+  path: string;
+  newTab?: boolean;
+}
 
-const menuData: Menu[] = [
+const menuData: MenuItem[] = [
   {
     id: 1,
     title: "Home",
     path: "/",
-    newTab: false,
   },
   {
     id: 2,
     title: "About Us",
-    newTab: false,
-    submenu: [
-      {
-        id: 21,
-        title: "Who We Are",
-        path: "/about",
-        newTab: false,
-      },
-      {
-        id: 22,
-        title: "Leadership",
-        path: "/leadership",
-        newTab: false,
-      },
-    ],
+    path: "/about",
   },
   {
     id: 3,
-    title: "Solutions",
-    newTab: false,
-    activeMatch: "/solutions",
-    submenu: [
-      {
-        id: 31,
-        title: "Services",
-        path: "/solutions/services",
-        newTab: false,
-      },
-      {
-        id: 32,
-        title: "Industries",
-        path: "/solutions/industries",
-        newTab: false,
-      },
-    ],
+    title: "Services",
+    path: "/solutions",
   },
   {
     id: 4,
-    title: "Partners",
-    path: "/partners",
-    newTab: false,
-  },
-  {
-    id: 5,
-    title: "Contact Us",
-    path: "/contact",
-    newTab: false,
+    title: "Insights",
+    path: "/insights",
   },
 ];
 

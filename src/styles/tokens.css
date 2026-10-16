@@ -80,4 +80,24 @@
   --ds-success: #16a34a;
   --ds-error:   #dc2626;
   --ds-warning: #d97706;
+
+  /* ---- Global Spacing System Tokens ---- */
+  --space-container-max:    1200px;
+  --space-pad-x-mobile:     20px;
+  --space-pad-x-desktop:    32px;
+
+  --space-section-py-mobile:  40px;
+  --space-section-py-tablet:  48px;
+  --space-section-py-desktop: 56px;
+
+  --space-major-gap-mobile:   40px;
+  --space-major-gap-tablet:   48px;
+  --space-major-gap-desktop:  56px;
+
+  --space-grid-gap-mobile:    16px;
+  --space-grid-gap-tablet:    20px;
+  --space-grid-gap-desktop:   24px;
+
+  --space-heading-to-para:    20px;
+  --space-para-to-cta:        28px;
 }

@@ -40,7 +40,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col overflow-hidden bg-canvas text-fg pb-0 pt-[120px] md:pt-[150px] xl:pt-[170px]"
+      className="relative flex flex-col overflow-hidden bg-canvas text-fg pb-0 pt-[110px] md:pt-[130px] lg:pt-[140px]"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
@@ -94,7 +94,7 @@ const Hero = () => {
 
         {/* Panelled so the figures read as one proof block instead of four
             numbers floating on the bare background. */}
-        <div className="mx-auto mt-16 max-w-[820px] pb-20 md:mt-24 md:pb-28 lg:pb-32">
+        <div className="mx-auto mt-10 max-w-[820px] pb-10 md:mt-12 md:pb-12 lg:pb-14">
           <dl className="ds-tile grid grid-cols-2 divide-edge px-2 py-6 sm:grid-cols-4 sm:divide-x sm:px-4">
             {stats.map(({ num, label }) => (
               <div key={label} className="px-4 py-3 text-center sm:py-0">

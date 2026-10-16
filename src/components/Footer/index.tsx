@@ -1,135 +1,127 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import MasamitsuCitiusLogo from "@/components/Common/MasamitsuCitiusLogo";
 
-const companyLinks = [
-  { label: "Home",       href: "/" },
-  { label: "About Us",   href: "/about" },
-  { label: "Leadership", href: "/leadership" },
-  { label: "Partners",   href: "/partners" },
-  { label: "Contact Us", href: "/contact" },
-];
+const footerNav = {
+  company: [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Insights", href: "/insights" },
+  ],
+  solutions: [
+    { label: "Surveillance & Security", href: "/solutions" },
+    { label: "Cybersecurity Solutions", href: "/solutions" },
+    { label: "Cloud & AI Solutions", href: "/solutions" },
+    { label: "System Integration", href: "/solutions" },
+  ],
+};
 
-/* Practice links deep-link to their own card on the services page — the
-   fragments match the `slug` values in src/data/solutions.tsx. */
-const solutionLinks = [
-  { label: "Services",      href: "/solutions/services" },
-  { label: "Industries",    href: "/solutions/industries" },
-  { label: "5G & vRAN",     href: "/solutions/services#telecom-networks" },
-  { label: "Cybersecurity", href: "/solutions/services#cybersecurity" },
-  { label: "Data Centers",  href: "/solutions/services#data-center" },
-];
+export default function Footer() {
+  return (
+    <footer className="w-full bg-[#142B45] text-slate-300 py-10 lg:py-14 border-t border-slate-800">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
+        
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-10 border-b border-slate-700/60">
+          
+          {/* Brand Column */}
+          <div className="lg:col-span-4 space-y-4">
+            <Link href="/" className="inline-block">
+              <MasamitsuCitiusLogo className="h-9 w-auto" />
+            </Link>
 
-const LinkedInIcon = () => (
-  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.419-.103.249-.129.597-.129.946v5.44h-3.554s.05-8.807 0-9.726h3.554v1.375c.427-.659 1.191-1.595 2.897-1.595 2.117 0 3.704 1.385 3.704 4.362v5.584zM5.337 8.855c-1.144 0-1.915-.762-1.915-1.715 0-.957.77-1.715 1.958-1.715 1.187 0 1.914.758 1.939 1.715 0 .953-.752 1.715-1.982 1.715zm1.946 11.597H3.392v-9.726h3.891v9.726zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
-  </svg>
-);
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm">
+              Combining Japanese engineering precision with Indian execution capabilities to build secure, intelligent &amp; resilient infrastructure.
+            </p>
 
-const Footer = () => (
-  <footer className="relative z-10 border-t border-edge bg-canvas">
-    <div className="container py-14 md:py-16">
-      <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:gap-16">
-
-        {/* Col 1: Brand */}
-        <div className="col-span-2 md:col-span-1">
-          <Link href="/" className="mb-5 inline-block">
-            <Image
-              src="/images/logo/Logo-wbg.svg"
-              alt="Citiuscomm"
-              width={140}
-              height={35}
-              className="w-auto"
-            />
-            <Image
-              src="/images/logo/Logo-dbg.svg"
-              alt="Citiuscomm"
-              width={140}
-              height={35}
-              className="hidden w-auto"
-            />
-          </Link>
-          <a
-            href="https://www.linkedin.com/company/citiuscommunications/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Citiuscomm on LinkedIn"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-edge text-muted transition-colors hover:border-primary hover:text-brand"
-          >
-            <LinkedInIcon />
-          </a>
-        </div>
-
-        {/* Col 2: Company */}
-        <div>
-          <h2 className="mb-5 text-xs font-semibold uppercase tracking-widest text-heading">
-            Company
-          </h2>
-          <ul className="space-y-3">
-            {companyLinks.map(({ label, href }) => (
-              <li key={label}>
-                <Link
-                  href={href}
-                  className="text-sm text-muted transition-colors hover:text-brand"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Col 3: Solutions */}
-        <div>
-          <h2 className="mb-5 text-xs font-semibold uppercase tracking-widest text-heading">
-            Solutions
-          </h2>
-          <ul className="space-y-3">
-            {solutionLinks.map(({ label, href }) => (
-              <li key={label}>
-                <Link
-                  href={href}
-                  className="text-sm text-muted transition-colors hover:text-brand"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Col 4: Contact */}
-        <div>
-          <h2 className="mb-5 text-xs font-semibold uppercase tracking-widest text-heading">
-            Contact
-          </h2>
-          <ul className="space-y-3 text-sm text-muted">
-            <li>
-              <a href="mailto:sales@citiuscomm.com" className="transition-colors hover:text-brand">
-                sales@citiuscomm.com
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href="https://www.linkedin.com/company/citiuscommunications/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#176DB2] hover:text-white"
+              >
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" />
+                </svg>
               </a>
-            </li>
-            <li>
-              <a href="tel:+912262362154" className="transition-colors hover:text-brand">
-                022 62362154
+              <a
+                href="#"
+                aria-label="Twitter"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#176DB2] hover:text-white"
+              >
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
-            </li>
-            <li className="leading-relaxed">
-              503, Filix Tower, LBS Marg,<br />
-              Bhandup (West), Mumbai – 400078.
-            </li>
-          </ul>
+            </div>
+          </div>
+
+          {/* Navigation Links Columns */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xs font-extrabold tracking-widest text-white uppercase mb-4">
+                COMPANY
+              </h3>
+              <ul className="space-y-2.5 text-xs sm:text-sm">
+                {footerNav.company.map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.href} className="text-slate-300 hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-extrabold tracking-widest text-white uppercase mb-4">
+                SOLUTIONS
+              </h3>
+              <ul className="space-y-2.5 text-xs sm:text-sm">
+                {footerNav.solutions.map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.href} className="text-slate-300 hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-extrabold tracking-widest text-white uppercase mb-4">
+                CONTACT
+              </h3>
+              <div className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                <p><strong className="text-white">Email:</strong> sales@citiuscomm.com</p>
+                <p><strong className="text-white">Phone:</strong> +91 7045908869</p>
+                <p className="leading-relaxed text-xs text-slate-400 pt-1">
+                  503, Filix Tower, LBS Marg, Bhandup (West), Mumbai – 400078
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-slate-400">
+          <p>© 2026 MASAMITSU CITIUS. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <span>|</span>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
 
       </div>
-
-      {/* Bottom bar */}
-      <div className="mt-12 border-t border-edge pt-8 text-center">
-        <p className="text-sm text-faint">
-          © {new Date().getFullYear()} CITIUSCOMM. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
-);
-
-export default Footer;
+    </footer>
+  );
+}

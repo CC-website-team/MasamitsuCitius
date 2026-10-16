@@ -6,7 +6,10 @@ const BASE_URL = "https://www.citiuscomm.com";
 const routes: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
   { path: "/solutions/services", priority: 0.8 },
-  { path: "/solutions/industries", priority: 0.8 },
+  { path: "/solutions/data-centre-cloud", priority: 0.85 },
+  { path: "/solutions/cybersecurity", priority: 0.85 },
+  { path: "/solutions/application-engineering-devsecops", priority: 0.85 },
+  { path: "/solutions/cloud-ai-solutions", priority: 0.85 },
   { path: "/contact", priority: 0.8 },
   { path: "/about", priority: 0.7 },
   { path: "/partners", priority: 0.7 },

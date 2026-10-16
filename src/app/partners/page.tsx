@@ -5,6 +5,15 @@ import SectionAccent from "@/components/ui/SectionAccent";
 import citiusProducts from "@/data/citiusProducts";
 import whyPartner from "@/data/whyPartner";
 import partnerEcosystem from "@/data/partnerEcosystem";
+import {
+  ChartIcon,
+  LightbulbIcon,
+  UsersIcon,
+  ShieldIcon,
+  ArrowRightIcon,
+} from "@/components/ui/icons";
+import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "Partners | Citiuscomm",
@@ -12,213 +21,278 @@ export const metadata = {
     "Why partner with Citiuscomm: our OSS/BSS, applied AI, and IoT solutions, our own product ventures, and the ecosystem of brands we build with.",
 };
 
-/**
- * An entry whose destination has not been confirmed. Those render as plain
- * tiles — a link to "#" is a link that lies about being one.
- */
 const isLinked = (url: string) => url !== "#";
 
+/**
+ * 2x2 Approach pillars matching screenshot reference
+ */
+const approachPillars = [
+  {
+    title: "Shared Growth",
+    description: "Expand into new markets together.",
+    icon: ChartIcon,
+  },
+  {
+    title: "Innovation",
+    description: "Bring next-gen solutions to life faster.",
+    icon: LightbulbIcon,
+  },
+  {
+    title: "Expertise",
+    description: "Combine strengths for greater value.",
+    icon: UsersIcon,
+  },
+  {
+    title: "Lasting Impact",
+    description: "Build sustainable, long-term partnerships.",
+    icon: ShieldIcon,
+  },
+];
+
 export default function PartnersPage() {
+  // 3 copies of partnerEcosystem array for seamless, gapless horizontal marquee
+  const marqueeItems = [
+    ...partnerEcosystem,
+    ...partnerEcosystem,
+    ...partnerEcosystem,
+  ];
+
   return (
-    <main className="relative bg-canvas">
-      {/* page-wide dotted backdrop — one layer so every section blends seamlessly */}
+    <main className="relative bg-white text-[#0A2540]">
+      {/* Background backdrop with subtle radial glow */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
-          className="ds-dots absolute inset-0 text-edge-2/90"
+          className="ds-dots absolute inset-0 text-slate-200/70"
           style={{
-            maskImage: "linear-gradient(to bottom, transparent 0, black 12%, black 86%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, transparent 0, black 12%, black 86%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0, black 8%, black 88%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0, black 8%, black 88%, transparent 100%)",
           }}
         />
-        <div className="absolute -top-24 left-1/2 h-[480px] w-[760px] -translate-x-1/2 rounded-full bg-primary/[0.05] blur-3xl" />
-        <div className="absolute top-[38%] right-[-12%] h-[360px] w-[480px] rounded-full bg-cta/[0.04] blur-3xl" />
+        <div className="absolute -top-32 left-1/2 h-[550px] w-[800px] -translate-x-1/2 rounded-full bg-[#156EB0]/[0.04] blur-3xl" />
+        <div className="absolute top-[40%] right-[-10%] h-[400px] w-[500px] rounded-full bg-[#D95F02]/[0.03] blur-3xl" />
       </div>
 
-      {/* ─── Section 1 · Why partner with us ───────────────────── */}
-      <section className="relative z-10 overflow-hidden pb-16 pt-[120px] md:pb-24 md:pt-[150px] xl:pt-[170px]">
-        <div className="container">
-          <div className="max-w-2xl">
-            <div className="mb-5">
-              <Badge variant="brand" dot>
-                Why Partner With Us
-              </Badge>
-            </div>
-            <h1 className="mb-5 text-4xl font-bold leading-tight text-heading sm:text-5xl">
-              Solutions worth building on
-            </h1>
-            <p className="text-lg leading-relaxed text-muted">
-              From OSS/BSS and applied AI to connected hardware, we bring proven platforms and
-              one accountable team across the full infrastructure lifecycle.
-            </p>
-          </div>
+      {/* ─── HERO SECTION (Full-Width Responsive Background with Subtle Left Overlay) ───── */}
+      <section className="relative z-10 min-h-[520px] md:min-h-[580px] lg:min-h-[620px] w-full overflow-hidden bg-[#070E20] pt-[110px] pb-12 md:pt-[135px] md:pb-16 lg:pt-[145px] lg:pb-20 flex items-center text-white">
+        {/* Full-Width Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/Partners/partners-hero.png"
+            alt="Partners Background"
+            fill
+            priority
+            className="object-cover object-right sm:object-right-center select-none"
+            sizes="100vw"
+          />
+          {/* Subtle Left-Only Navy Gradient Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070E20] via-[#070E20]/90 via-40% md:via-50% to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#070E20]/90 via-transparent to-transparent sm:hidden" />
+        </div>
 
-          {/* Level-2 anchor for the page outline — the cards below are all h3. */}
-          <h2 className="sr-only">Why partner with us</h2>
+        <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 md:px-8">
+          <div className="max-w-xl md:max-w-2xl">
+            <Reveal>
+              <div className="mb-3.5 flex items-center gap-2.5">
+                <span className="h-0.5 w-6 rounded-full bg-[#D95F02]" />
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#D95F02]">
+                  PARTNERS
+                </span>
+              </div>
+            </Reveal>
 
-          {/* Dark panels on a light page. The three featured cards take the full
-              brand fill and the rest take navy, so the solutions lead the block
-              without needing a size difference to say so.
+            <Reveal delay={0.08}>
+              <h1 className="mb-5 text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-[3.5rem] leading-[1.1]">
+                Stronger together for a <br className="hidden sm:inline" />
+                <span className="text-[#D95F02]">connected tomorrow.</span>
+              </h1>
+            </Reveal>
 
-              Body copy is deliberately NOT on-dark-muted on the featured cards:
-              that token is measured against navy (8.7:1) and falls to 3.09:1 on
-              brand blue, under the AA floor. on-dark is 4.9:1 on brand and
-              passes. Do not unify these two back into one class. */}
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 md:mt-14">
-            {whyPartner.map((card, i) => {
-              const Icon = card.icon;
-              return (
-                <Reveal key={card.title} delay={(i % 3) * 0.08} className="h-full">
-                  <article
-                    className={`relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 p-7 ${
-                      card.featured ? "bg-brand" : "bg-navy"
-                    }`}
-                  >
-                    {/* Oversized index as a watermark. Sits under the content and
-                        runs off the corner, cropped by the card's overflow. */}
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute -bottom-8 -right-3 select-none text-[7.5rem] font-bold leading-none tracking-tight text-white/[0.06]"
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+            <Reveal delay={0.16}>
+              <p className="mb-8 text-base sm:text-lg leading-relaxed text-slate-200 max-w-xl">
+                We collaborate with global technology leaders to deliver innovative solutions, deeper expertise and greater value to our customers.
+              </p>
+            </Reveal>
 
-                    <div className="relative z-10 flex flex-col">
-                      <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-muted text-brand">
-                        <Icon size={32} />
-                      </div>
-                      <p
-                        className={`mb-2 text-[11px] font-semibold uppercase tracking-widest ${
-                          card.featured ? "text-on-dark" : "text-on-dark-muted"
-                        }`}
-                      >
-                        {card.tag}
-                      </p>
-                      <h3 className="mb-2 text-lg font-bold text-white">{card.title}</h3>
-                      <p
-                        className={`text-sm leading-relaxed ${
-                          card.featured ? "text-on-dark" : "text-on-dark-muted"
-                        }`}
-                      >
-                        {card.description}
-                      </p>
-                    </div>
-                  </article>
-                </Reveal>
-              );
-            })}
+            <Reveal delay={0.24}>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="#partner-ecosystem"
+                  className="group inline-flex items-center gap-3 rounded-full bg-[#D95F02] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#b84e00] hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D95F02]"
+                >
+                  <span>Partner with us</span>
+                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </Reveal>
+
+            {/* Bottom Key Pillars Bar */}
+
           </div>
         </div>
       </section>
 
-      {/* ─── Section 2 · Our products ──────────────────────────── */}
-      {/* Bottom padding only: the section above owns the gap, so adjacent
-          sections never stack their padding into a dead band. */}
-      <section className="relative z-10 pb-16 md:pb-24">
-        <div className="container">
-          <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center">
-            <SectionAccent className="mb-6" />
-            <div className="mb-5">
-              <Badge variant="brand" dot>
-                Our Products
-              </Badge>
-            </div>
-            <h2 className="mb-5 text-3xl font-bold leading-tight text-heading sm:text-4xl">
-              The ventures we build ourselves
-            </h2>
-            <p className="text-base leading-relaxed text-muted">
-              Alongside the platforms we deploy for customers, we build and own products of our
-              own — the same engineering, pointed at our own roadmap.
-            </p>
-          </div>
+      {/* ─── SECTION 2: OUR APPROACH ─────────────────────────────────── */}
+      <section className="relative z-10 border-t border-slate-100 bg-section-alt py-12 md:py-16 lg:py-20">
+        <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
 
-          {/* Larger than the OEM tiles below on every axis that reads as weight:
-              padding, logo well, type scale, and a brand accent rail across the
-              top that the ecosystem tiles do not get. Three across at lg, and
-              never more — these are meant to be scanned, not swept. */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {citiusProducts.map((product, i) => (
-              <Reveal key={product.name} delay={(i % 3) * 0.08} className="h-full">
-                <article className="ds-tile relative flex h-full flex-col items-center overflow-hidden p-8 text-center md:p-10">
-                  <span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-brand" />
-
-                  <div className="mb-6 flex h-24 w-full items-center justify-center">
-                    <img
-                      src={product.logo}
-                      alt={product.name}
-                      style={{ maxHeight: `${3 * (product.logoScale ?? 1)}rem` }}
-                      className="w-auto object-contain"
-                    />
-                  </div>
-
-                  <h3 className="mb-3 text-xl font-bold text-heading">{product.name}</h3>
-                  <p className="text-sm leading-relaxed text-muted">{product.description}</p>
-                </article>
+            {/* Approach Left Column */}
+            <div className="lg:col-span-5 pr-0 lg:pr-6">
+              <Reveal>
+                <div className="mb-4 flex items-center gap-2.5">
+                  <span className="h-0.5 w-6 rounded-full bg-[#D95F02]" />
+                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#D95F02]">
+                    OUR APPROACH
+                  </span>
+                </div>
               </Reveal>
-            ))}
+
+              <Reveal delay={0.08}>
+                <h2 className="mb-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0A2540] leading-tight">
+                  A partnership <br className="hidden sm:inline" />
+                  built for what&apos;s next<span className="text-[#D95F02]">.</span>
+                </h2>
+              </Reveal>
+
+              <Reveal delay={0.16}>
+                <p className="mb-8 text-base text-[#4A6785] leading-relaxed max-w-md">
+                  We work closely with our partners to create mutual growth and shape the future of connectivity.
+                </p>
+              </Reveal>
+
+
+            </div>
+
+            {/* Vertical Divider Line on Large Screens */}
+            <div className="hidden lg:block lg:col-span-1 flex justify-center">
+              <div className="h-64 w-[1px] bg-slate-200" />
+            </div>
+
+            {/* Approach Right Column: 2x2 Grid */}
+            <div className="lg:col-span-6">
+              <div className="grid gap-8 sm:grid-cols-2 lg:gap-10">
+                {approachPillars.map((pillar, i) => {
+                  const Icon = pillar.icon;
+                  return (
+                    <Reveal key={pillar.title} delay={i * 0.08}>
+                      <div className="flex flex-col items-start">
+                        <div className="mb-4 flex h-13 w-13 items-center justify-center rounded-full bg-[#E8F1F9] text-[#156EB0] p-3 shadow-sm">
+                          <Icon size={24} />
+                        </div>
+                        <h3 className="mb-1.5 text-lg font-bold text-[#0A2540]">
+                          {pillar.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-[#4A6785]">
+                          {pillar.description}
+                        </p>
+                      </div>
+                    </Reveal>
+                  );
+                })}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ─── Section 3 · Partner ecosystem (flat grid) ─────────── */}
-      <section className="relative z-10 pb-16 md:pb-24">
-        <div className="container">
-          <div className="mb-12 max-w-2xl">
-            <div className="mb-5">
-              <Badge variant="brand" dot>
-                The Ecosystem
-              </Badge>
+      {/* ─── SECTION 3: TRUSTED BY GLOBAL LEADERS (CAROUSEL) ────────── */}
+      <section id="partner-ecosystem" className="relative z-10 py-12 md:py-16 lg:py-20 bg-white border-t border-slate-100 overflow-hidden">
+        <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 mb-10">
+          <Reveal>
+            <div className="mb-4 flex items-center gap-2.5">
+              <span className="h-0.5 w-6 rounded-full bg-[#D95F02]" />
+              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#D95F02]">
+                OUR PARTNER ECOSYSTEM
+              </span>
             </div>
-            <h2 className="mb-5 text-3xl font-bold leading-tight text-heading sm:text-4xl">
-              The brands we build with
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0A2540]">
+              Trusted by global leaders<span className="text-[#D95F02]"></span>
             </h2>
-            <p className="text-base leading-relaxed text-muted">
-              A network of technology, service, and solution partners. Together we design, build,
-              and operate world-class infrastructure.
+          </Reveal>
+        </div>
+
+        {/* Auto-sliding Infinite Continuous Marquee */}
+        <div className="relative w-full border-y border-slate-200/80 bg-slate-50/40 py-6">
+          {/* Horizontal Edge Fades for Seamless Mask */}
+          <div className="ds-fade-x overflow-hidden">
+            <div
+              className="ds-marquee-track"
+              style={{ animationDuration: "42s" }}
+            >
+              {marqueeItems.map((partner, index) => (
+                <div
+                  key={`${partner.name}-${index}`}
+                  className="flex h-16 w-52 sm:w-60 shrink-0 items-center justify-center border-r border-slate-200/70 px-6 py-2 transition-opacity duration-300"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    style={
+                      partner.logoScale
+                        ? { maxHeight: `${2.4 * partner.logoScale}rem` }
+                        : { maxHeight: "2.4rem" }
+                    }
+                    className="w-auto max-w-[140px] select-none object-contain opacity-85 hover:opacity-100 transition-opacity"
+                    draggable={false}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Full Interactive Partner Ecosystem Catalog Grid */}
+        <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 mt-16">
+          <div className="mb-8">
+            <h3 className="text-xl font-bold text-[#0A2540]">
+              Partner Directory
+            </h3>
+            <p className="text-sm text-[#4A6785]">
+              Explore our global ecosystem of technology, telecom, cloud, and security partners.
             </p>
           </div>
 
-          {/* One flat grid, no sector headings. The groups were eight rows of
-              two or three tiles apiece, which read as eight small fragments
-              rather than one ecosystem — the sector data is still on each entry
-              if it is ever needed again.
-
-              Tinted card, white well: the well is what keeps logos that ship on
-              a white background from floating on a coloured field, and the tint
-              is what stops the card disappearing into the page. */}
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {partnerEcosystem.map((partner, i) => {
-              const tile = (
-                <>
-                  <div className="flex h-16 items-center justify-center rounded-xl bg-white px-4 py-3">
+              const cardContent = (
+                <div className="flex flex-col items-center justify-center p-4 text-center">
+                  <div className="mb-3 flex h-14 w-full items-center justify-center">
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      style={{ maxHeight: `${2.5 * (partner.logoScale ?? 1)}rem` }}
-                      className="w-auto object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+                      style={{ maxHeight: `${2.2 * (partner.logoScale ?? 1)}rem` }}
+                      className="w-auto max-w-[120px] object-contain opacity-90 transition-opacity duration-200 group-hover:opacity-100"
                     />
                   </div>
-                  <p className="mt-4 text-center text-[11px] font-semibold uppercase tracking-widest text-faint">
+                  <span className="text-xs font-semibold text-[#0A2540] group-hover:text-[#156EB0] transition-colors">
                     {partner.name}
-                  </p>
-                </>
+                  </span>
+                  <span className="mt-0.5 text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                    {partner.sector}
+                  </span>
+                </div>
               );
 
-              // h-full on both branches plus items-stretch from the grid keeps
-              // every tile the same height whether or not it is a link.
               return (
-                <Reveal key={partner.name} delay={(i % 5) * 0.05} className="h-full">
+                <Reveal key={partner.name} delay={(i % 6) * 0.04}>
                   {isLinked(partner.url) ? (
                     <a
                       href={partner.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex h-full flex-col rounded-2xl border border-edge bg-canvas-subtle p-5 transition-colors duration-200 hover:border-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      className="group flex h-full flex-col rounded-xl border border-slate-200 bg-white p-2 transition-all duration-200 hover:-translate-y-1 hover:border-[#156EB0] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#156EB0]"
                     >
-                      {tile}
+                      {cardContent}
                     </a>
                   ) : (
-                    <div className="group flex h-full flex-col rounded-2xl border border-edge bg-canvas-subtle p-5">
-                      {tile}
+                    <div className="group flex h-full flex-col rounded-xl border border-slate-200 bg-white p-2 transition-all duration-200">
+                      {cardContent}
                     </div>
                   )}
                 </Reveal>
@@ -228,7 +302,9 @@ export default function PartnersPage() {
         </div>
       </section>
 
+      {/* CTA BAND */}
       <CtaBand />
     </main>
   );
 }
+

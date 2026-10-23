@@ -42,7 +42,7 @@ const branches = [
     country: "India",
     email: "sales@citiuscomm.com",
     address:
-      "2, Canal Street, 1st floor,\nFlat#1B, near Entally Police Station,\nKolkata – 700014.",
+      "GE-56, Rajdanga Main Rd, Sarat Park,\nBosepukur Purbapara,Sector G, East Kolkata Twp, \nKolkata, West Bengal 700107",
   },
   {
     city: "Delhi",
@@ -434,7 +434,7 @@ export default function Contact() {
               Always Close to Where You Need Us
             </h2>
             <p className="max-w-2xl text-base text-[#4A6785] leading-relaxed">
-              A strong presence across India with growing international operations in Singapore and Dubai.
+              A strong presence across India with growing international operations in Singapore.
             </p>
           </div>
 

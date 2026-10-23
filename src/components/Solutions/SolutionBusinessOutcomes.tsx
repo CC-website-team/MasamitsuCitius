@@ -63,7 +63,7 @@ const defaultOutcomes: OutcomeItem[] = [
   {
     id: "governed-ai",
     number: "05",
-    title: "Governed Deployment of Workloads",
+    title: "Governed Deployment of Production AI Workloads",
     description:
       "Enterprise MLOps pipelines, AI safety guardrails, continuous model monitoring, and automated lifecycle governance from dev to production.",
     icon: (

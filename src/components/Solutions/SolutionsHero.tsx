@@ -12,8 +12,10 @@ export default function SolutionsHero() {
             <div className="flex items-center gap-2 mb-4 sm:mb-5">
               <span className="h-[2px] w-6 bg-[#D95F02]" aria-hidden="true" />
               <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-slate-500">
-                OUR SOLUTIONS
+                OUR SERVICES
+
               </span>
+              <span className="h-[2px] w-8 bg-[#176DB2]" />
             </div>
 
             {/* H1 Heading */}

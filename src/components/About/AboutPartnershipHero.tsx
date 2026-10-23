@@ -30,7 +30,7 @@ export default function AboutPartnershipHero() {
             {/* Content Paragraphs */}
             <div className="space-y-4 text-sm sm:text-base lg:text-[17px] text-slate-600 leading-relaxed font-normal">
               <p>
-                <strong className="text-[#142B45] font-semibold">MASAMITSU × CitiusComm</strong> was formed to bridge the gap between accessible world-class technology design and reliable project execution.
+                <strong className="text-[#142B45] font-semibold">MASAMITSU × Citius</strong> was formed to bridge the gap between accessible world-class technology design and reliable project execution.
               </p>
               <p>
                 By combining Japanese technology standards with Indian delivery expertise, we help organizations deploy technology solutions that are secure, scalable, and sustainable.Working ahead of time for security and supervision.

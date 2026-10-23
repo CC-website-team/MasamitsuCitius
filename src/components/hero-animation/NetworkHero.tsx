@@ -32,8 +32,8 @@ export default function NetworkHero() {
             {/* Main Headline */}
             <h1 className="font-extrabold tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] leading-[1.12]">
               Technology for{" "}
-              <span className="text-[#176DB2]">Secure, Intelligent &amp;</span>{" "}
-              Resilient Infrastructure
+              <span className="text-[#D95F02]">Secure, Intelligent &amp; Resilient</span>{" "}
+              Infrastructure
             </h1>
 
             {/* Sub-paragraph */}
@@ -46,17 +46,15 @@ export default function NetworkHero() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded bg-[#C9232C] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#a81a22] focus:outline-none"
+                className="inline-flex items-center justify-center gap-2 rounded border-2 border-white/80 bg-white/10 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white focus:outline-none"
               >
                 <span>Request Consultation</span>
-                <span className="text-base font-bold">→</span>
               </Link>
-
               <Link
                 href="/solutions"
                 className="inline-flex items-center justify-center gap-2 rounded border-2 border-white/80 bg-white/10 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white focus:outline-none"
               >
-                <span>Explore Solutions</span>
+                <span>Explore Services</span>
               </Link>
             </div>
 

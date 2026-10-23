@@ -56,7 +56,7 @@ export const solutionsData: SolutionItem[] = [
     description:
       "We architect hybrid multi-cloud foundations and deploy scalable compute, storage, and landing zones tailored for high availability. From cloud strategy and landing zone automation to private cloud virtualisation, workload migration, disaster recovery, and continuous observability, we build scalable and secure enterprise environments.",
     ctaLabel: "Explore",
-    ctaHref: "/solutions/cloud-ai-solutions",
+    ctaHref: "/solutions/cloud-infrastructure",
     imagePath: "/images/about/Modern Cloud Operations Infographic.png",
     imageAlt: "Enterprise cloud infrastructure, data center, and hybrid multi-cloud architecture",
     layout: "text-left",
@@ -84,7 +84,7 @@ export const solutionsData: SolutionItem[] = [
     description:
       "We automate how software is built, tested, released, and run by combining CI/CD pipelines, infrastructure as code, and container platforms. Our DevOps practices embed automated security scanning, GitOps workflows, Kubernetes orchestration, SRE discipline, and end-to-end observability to accelerate deployment cycles with confidence.",
     ctaLabel: "Explore",
-    ctaHref: "/solutions/application-engineering-devsecops",
+    ctaHref: "/solutions/devops",
     imagePath: "/images/about/4c91f48b-7294-4ae2-bd25-4ec68a7dfd60.png",
     imageAlt: "CI/CD pipelines, DevOps automation, and container orchestration platforms",
     layout: "text-left",
@@ -98,7 +98,7 @@ export const solutionsData: SolutionItem[] = [
     description:
       "We help organisations move from AI experiments to production systems that run the business — from robust data foundations to generative assistants and MLOps. Combining enterprise LLM integration, Retrieval-Augmented Generation (RAG), predictive analytics, and model governance, we deliver secure and impactful artificial intelligence solutions.",
     ctaLabel: "Explore",
-    ctaHref: "/solutions/cloud-ai-solutions",
+    ctaHref: "/solutions/ai-solutions",
     imagePath: "/images/about/e42f7472-6c57-493a-b1ee-4caf751ac69d.png",
     imageAlt: "Artificial Intelligence, enterprise assistants, and machine learning models",
     layout: "text-right",

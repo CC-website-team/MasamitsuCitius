@@ -186,12 +186,12 @@ export default function SolutionsSection() {
   };
 
   return (
-    <section id="services" className="relative w-full bg-[#FAFAFC] py-12 md:py-16 lg:py-20 border-t border-slate-100 overflow-hidden">
+    <section id="services" className="relative w-full bg-[#FAFAFC] py-7 md:py-8 lg:py-10 border-t border-slate-100 overflow-hidden">
       {/* Background aesthetic touches */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-b from-[#176DB2]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-t from-[#C9232C]/4 to-transparent rounded-full blur-3xl pointer-events-none" />
 
-      <div className="mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 lg:mb-12">
@@ -209,7 +209,7 @@ export default function SolutionsSection() {
               End-to-End Technology <span className="text-[#C9232C]">Solutions</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl pt-1">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl pt-1">
               From network infrastructure and cybersecurity to cloud architectures, DevOps, and enterprise AI, we deliver unified technology solutions for modern enterprises and government organizations.
             </p>
           </div>
@@ -222,8 +222,8 @@ export default function SolutionsSection() {
                 type="button"
                 onClick={() => handleCategoryChange("all")}
                 className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${activeCategory === "all"
-                  ? "bg-white text-[#142B45] shadow-xs"
-                  : "text-slate-600 hover:text-[#142B45]"
+                    ? "bg-white text-[#142B45] shadow-xs"
+                    : "text-slate-600 hover:text-[#142B45]"
                   }`}
               >
                 All (7)
@@ -232,8 +232,8 @@ export default function SolutionsSection() {
                 type="button"
                 onClick={() => handleCategoryChange("infrastructure")}
                 className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${activeCategory === "infrastructure"
-                  ? "bg-white text-[#142B45] shadow-xs"
-                  : "text-slate-600 hover:text-[#142B45]"
+                    ? "bg-white text-[#142B45] shadow-xs"
+                    : "text-slate-600 hover:text-[#142B45]"
                   }`}
               >
                 IT Infrastructure (3)
@@ -242,8 +242,8 @@ export default function SolutionsSection() {
                 type="button"
                 onClick={() => handleCategoryChange("engineering")}
                 className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${activeCategory === "engineering"
-                  ? "bg-white text-[#142B45] shadow-xs"
-                  : "text-slate-600 hover:text-[#142B45]"
+                    ? "bg-white text-[#142B45] shadow-xs"
+                    : "text-slate-600 hover:text-[#142B45]"
                   }`}
               >
                 Application Engineering (4)
@@ -258,8 +258,8 @@ export default function SolutionsSection() {
                 onClick={() => handleScroll("prev")}
                 disabled={!canScrollPrev}
                 className={`group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white shadow-xs transition-all duration-200 cursor-pointer ${!canScrollPrev
-                  ? "opacity-35 cursor-not-allowed text-slate-400"
-                  : "text-[#142B45] hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white hover:shadow-md"
+                    ? "opacity-35 cursor-not-allowed text-slate-400"
+                    : "text-[#142B45] hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white hover:shadow-md"
                   }`}
               >
                 <svg className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -273,8 +273,8 @@ export default function SolutionsSection() {
                 onClick={() => handleScroll("next")}
                 disabled={!canScrollNext}
                 className={`group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white shadow-xs transition-all duration-200 cursor-pointer ${!canScrollNext
-                  ? "opacity-35 cursor-not-allowed text-slate-400"
-                  : "text-[#142B45] hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white hover:shadow-md"
+                    ? "opacity-35 cursor-not-allowed text-slate-400"
+                    : "text-[#142B45] hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white hover:shadow-md"
                   }`}
               >
                 <svg className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -388,8 +388,8 @@ export default function SolutionsSection() {
                 aria-label={`Go to slide ${idx + 1}: ${item.title}`}
                 onClick={() => scrollToCard(idx)}
                 className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === idx
-                  ? "w-7 bg-[#C9232C]"
-                  : "w-2 bg-slate-300 hover:bg-slate-400"
+                    ? "w-7 bg-[#C9232C]"
+                    : "w-2 bg-slate-300 hover:bg-slate-400"
                   }`}
               />
             ))}

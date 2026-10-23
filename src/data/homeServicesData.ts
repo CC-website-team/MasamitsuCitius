@@ -20,8 +20,7 @@ export const homeSolutionsList: HomeSolutionItem[] = [
     tagline: "Connectivity that keeps the business running",
     description:
       "We architect and manage the connectivity layer that links your sites, data centres, clouds, devices and people — securely and reliably.",
-    image: "/images/7fe9318a-7c68-4bf8-9759-ca61e80e5b49.png",
-
+    image: "/images/about/8188b193-6cdd-46f8-8cf2-d7185887dc33.png",
     alt: "Enterprise network switches, optical fiber infrastructure, and structured cabling",
     features: [
       "Enterprise WAN & SD-WAN",
@@ -59,7 +58,7 @@ export const homeSolutionsList: HomeSolutionItem[] = [
     tagline: "Resilient foundations for hybrid enterprise workloads",
     description:
       "We architect hybrid multi-cloud foundations and deploy scalable compute, storage, and landing zones tailored for high availability.",
-    image: "/images/about/Modern Cloud Operations Infographic.png",
+    image: "/images/c1af6544-69b4-41ac-a09c-eb0d1766dc09.png",
     alt: "Enterprise cloud infrastructure, data center, and hybrid multi-cloud architecture",
     features: [
       "Cloud Strategy & Automated Landing Zones",

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutPartnershipHero() {
   return (
-    <section className="relative w-full bg-white pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 border-b border-slate-100">
+    <section className="relative w-full bg-white pt-24 pb-7 md:pt-28 md:pb-8 lg:pt-32 lg:pb-10 border-b border-slate-100">
       <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
 
@@ -30,7 +30,7 @@ export default function AboutPartnershipHero() {
             {/* Content Paragraphs */}
             <div className="space-y-4 text-sm sm:text-base lg:text-[17px] text-slate-600 leading-relaxed font-normal">
               <p>
-                <strong className="text-[#142B45] font-semibold">MASAMITSU × Citius</strong> was formed to bridge the gap between accessible world-class technology design and reliable project execution.
+                <strong className="text-[#142B45] font-semibold">MASAMITSU × CitiusComm</strong> was formed to bridge the gap between accessible world-class technology design and reliable project execution.
               </p>
               <p>
                 By combining Japanese technology standards with Indian delivery expertise, we help organizations deploy technology solutions that are secure, scalable, and sustainable.Working ahead of time for security and supervision.

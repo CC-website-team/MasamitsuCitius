@@ -10,7 +10,7 @@ export default function SolutionPageNav() {
 
   return (
     <div className="sticky top-[64px] sm:top-[68px] lg:top-[72px] z-30 mt-[72px] sm:mt-[76px] lg:mt-[80px] bg-white/95 backdrop-blur-md border-b border-slate-200/90 py-2.5 sm:py-3 shadow-sm">
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col space-y-2 sm:space-y-2.5">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8 flex flex-col space-y-2 sm:space-y-2.5">
         {solutionNavRows.map((row, rowIndex) => (
           <div
             key={rowIndex}

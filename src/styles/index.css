@@ -96,8 +96,8 @@
 /* ---- Container & Spacing System Utilities ---- */
 @utility container {
   margin-inline: auto;
-  max-width: 1200px;
-  padding-inline: 20px;
+  max-width: 1240px;
+  padding-inline: 16px;
   width: 100%;
 
   @media (min-width: 768px) {
@@ -107,8 +107,8 @@
 
 @utility ds-container {
   margin-inline: auto;
-  max-width: 1200px;
-  padding-inline: 20px;
+  max-width: 1240px;
+  padding-inline: 16px;
   width: 100%;
 
   @media (min-width: 768px) {
@@ -117,14 +117,14 @@
 }
 
 @utility ds-section-py {
-  padding-block: 48px;
+  padding-block: 24px;
 
   @media (min-width: 768px) {
-    padding-block: 64px;
+    padding-block: 28px;
   }
 
   @media (min-width: 1024px) {
-    padding-block: 80px;
+    padding-block: 36px;
   }
 }
 

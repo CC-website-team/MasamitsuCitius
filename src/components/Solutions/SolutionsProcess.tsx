@@ -39,7 +39,7 @@ const stepIcons = [DiscoverIcon, DesignIcon, DeployIcon, OptimiseIcon, GrowIcon]
 
 export default function SolutionsProcess() {
   return (
-    <section className="relative overflow-hidden bg-[#FAFAFC] py-12 md:py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-[#FAFAFC] py-7 md:py-8 lg:py-10">
       {/* Decorative Corner Background Overlay - Top Right Soft Radial Glow */}
       <div
         className="pointer-events-none absolute -right-20 -top-20 h-96 w-96 rounded-full bg-gradient-to-bl from-slate-200/50 via-slate-100/30 to-transparent blur-3xl"

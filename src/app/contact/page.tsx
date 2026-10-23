@@ -42,7 +42,7 @@ const branches = [
     country: "India",
     email: "sales@citiuscomm.com",
     address:
-      "GE-56, Rajdanga Main Rd, Sarat Park,\nBosepukur Purbapara,Sector G, East Kolkata Twp, \nKolkata, West Bengal 700107",
+      "2, Canal Street, 1st floor,\nFlat#1B, near Entally Police Station,\nKolkata – 700014.",
   },
   {
     city: "Delhi",
@@ -159,7 +159,7 @@ export default function Contact() {
           </svg>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[1200px] px-5 md:px-8">
+        <div className="relative mx-auto w-full max-w-[1240px] px-4 md:px-8">
           <div className="grid items-center gap-8 lg:grid-cols-12">
 
             {/* Top-Left Side Block (Desktop) */}
@@ -234,8 +234,8 @@ export default function Contact() {
       </section>
 
       {/* ─── SECTION 2: LET'S TALK & SEND US A MESSAGE FORM ─────────── */}
-      <section id="contact-form" className="relative z-10 py-12 md:py-16 lg:py-20 bg-section-alt border-b border-slate-200/60">
-        <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+      <section id="contact-form" className="relative z-10 py-7 md:py-8 lg:py-10 bg-section-alt border-b border-slate-200/60">
+        <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
 
             {/* Left Column: Let's Talk Info */}
@@ -424,8 +424,8 @@ export default function Contact() {
 
 
       {/* ─── SECTION 4: GLOBAL OFFICES DIRECTORY ────────────────────── */}
-      <section id="global-offices" className="relative z-10 py-12 md:py-16 lg:py-20 bg-white border-t border-slate-200/60">
-        <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+      <section id="global-offices" className="relative z-10 py-7 md:py-8 lg:py-10 bg-white border-t border-slate-200/60">
+        <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
           <div className="mb-12 text-left">
             <div className="mb-4 inline-flex items-center gap-2">
               <Badge variant="brand" dot>Global Offices</Badge>
@@ -434,7 +434,7 @@ export default function Contact() {
               Always Close to Where You Need Us
             </h2>
             <p className="max-w-2xl text-base text-[#4A6785] leading-relaxed">
-              A strong presence across India with growing international operations in Singapore.
+              A strong presence across India with growing international operations in Singapore and Dubai.
             </p>
           </div>
 

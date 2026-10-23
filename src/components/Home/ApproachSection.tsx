@@ -38,7 +38,7 @@ const approachSteps: ApproachStep[] = [
 
 export default function ApproachSection() {
   return (
-    <section className="relative w-full bg-white py-12 md:py-16 lg:py-20 border-t border-slate-100 overflow-hidden">
+    <section className="relative w-full bg-white py-7 md:py-8 lg:py-10 border-t border-slate-100 overflow-hidden">
       <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
 
         {/* Section Header */}

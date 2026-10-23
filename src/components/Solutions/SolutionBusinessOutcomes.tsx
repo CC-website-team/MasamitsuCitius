@@ -63,7 +63,7 @@ const defaultOutcomes: OutcomeItem[] = [
   {
     id: "governed-ai",
     number: "05",
-    title: "Governed Deployment of Production AI Workloads",
+    title: "Governed Deployment of Workloads",
     description:
       "Enterprise MLOps pipelines, AI safety guardrails, continuous model monitoring, and automated lifecycle governance from dev to production.",
     icon: (
@@ -88,8 +88,8 @@ export default function SolutionBusinessOutcomes({
   outcomes = defaultOutcomes,
 }: SolutionBusinessOutcomesProps) {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-[#FAFAFC] border-t border-slate-200/70">
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+    <section className="py-7 md:py-8 lg:py-10 bg-[#FAFAFC] border-t border-slate-200/70">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-12 md:mb-16">
           <div className="flex items-center gap-2 mb-3">

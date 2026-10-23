@@ -134,7 +134,7 @@ export default function PartnersPage() {
       </section>
 
       {/* ─── SECTION 2: OUR APPROACH ─────────────────────────────────── */}
-      <section className="relative z-10 border-t border-slate-100 bg-section-alt py-12 md:py-16 lg:py-20">
+      <section className="relative z-10 border-t border-slate-100 bg-section-alt py-7 md:py-8 lg:py-10">
         <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
 
@@ -199,7 +199,7 @@ export default function PartnersPage() {
       </section>
 
       {/* ─── SECTION 3: TRUSTED BY GLOBAL LEADERS (CAROUSEL) ────────── */}
-      <section id="partner-ecosystem" className="relative z-10 py-12 md:py-16 lg:py-20 bg-white border-t border-slate-100 overflow-hidden">
+      <section id="partner-ecosystem" className="relative z-10 py-7 md:py-8 lg:py-10 bg-white border-t border-slate-100 overflow-hidden">
         <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 mb-10">
           <Reveal>
             <div className="mb-4 flex items-center gap-2.5">

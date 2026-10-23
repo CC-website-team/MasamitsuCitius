@@ -9,14 +9,11 @@ const footerNav = {
     { label: "About Us", href: "/about" },
     { label: "Insights", href: "/insights" },
   ],
-  services: [
-    { label: "Network Solutions", href: "/solutions/data-centre-cloud" },
-    { label: "Cybersecurity & Surveillance", href: "/solutions/cybersecurity" },
-    { label: "Cloud Infrastructure", href: "/solutions/cloud-infrastructure" },
-    { label: "Application Development Management", href: "/solutions/application-engineering-devsecops" },
-    { label: "DevOps", href: "/solutions/devops" },
-    { label: "AI", href: "/solutions/ai-solutions" },
-    { label: "Cloud-Native Applications", href: "/solutions/cloud-ai-solutions" },
+  solutions: [
+    { label: "Surveillance & Security", href: "/solutions" },
+    { label: "Cybersecurity Solutions", href: "/solutions" },
+    { label: "Cloud & AI Solutions", href: "/solutions" },
+    { label: "System Integration", href: "/solutions" },
   ],
 };
 
@@ -81,10 +78,10 @@ export default function Footer() {
 
             <div>
               <h3 className="text-xs font-extrabold tracking-widest text-white uppercase mb-4">
-                SERVICES
+                SOLUTIONS
               </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm">
-                {footerNav.services.map((item) => (
+                {footerNav.solutions.map((item) => (
                   <li key={item.label}>
                     <Link href={item.href} className="text-slate-300 hover:text-white transition-colors">
                       {item.label}

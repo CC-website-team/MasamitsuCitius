@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function SolutionsCtaBanner() {
   return (
-    <section className="relative overflow-hidden bg-white py-12 md:py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-white py-7 md:py-8 lg:py-10">
       {/* Background Graphic / Mountain Skyline Overlay */}
       {/* CTA Gradient Background */}
       <div
@@ -57,7 +57,7 @@ export default function SolutionsCtaBanner() {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 md:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 md:px-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
 
           {/* Left Text Box */}
@@ -77,7 +77,7 @@ export default function SolutionsCtaBanner() {
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
-              Partner with Citius and let's build a more connected tomorrow.
+              Partner with CitiusComm and let's build a more connected tomorrow.
             </p>
           </div>
 

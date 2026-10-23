@@ -7,7 +7,7 @@ import { homeServicesList } from '@/data/homeServicesData';
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="w-full bg-section-alt py-12 md:py-16 lg:py-20">
+    <section id="services" className="w-full bg-section-alt py-7 md:py-8 lg:py-10">
       <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
         {/* Section Header */}
         <div className="mb-8 md:mb-10 lg:mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">

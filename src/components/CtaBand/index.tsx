@@ -20,8 +20,8 @@ export default function CtaBand({
   secondaryHref,
 }: CtaBandProps) {
   return (
-    <section className="w-full bg-white py-12 md:py-16 lg:py-20">
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+    <section className="w-full bg-white py-7 md:py-8 lg:py-10">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
         <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-r from-purple-50/40 via-orange-50/30 to-rose-50/40 p-8 sm:p-14 lg:p-20 shadow-xs">
 
           {/* Subtle flowing background gradient line art */}

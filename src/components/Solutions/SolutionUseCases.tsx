@@ -16,8 +16,8 @@ export default function SolutionUseCases({
   eyebrow = "INDUSTRY USE CASES",
 }: SolutionUseCasesProps) {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-white border-t border-slate-200/70">
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+    <section className="py-7 md:py-8 lg:py-10 bg-white border-t border-slate-200/70">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
 
         {/* Header */}
         <div className="max-w-3xl mb-12 md:mb-16 lg:mb-20">

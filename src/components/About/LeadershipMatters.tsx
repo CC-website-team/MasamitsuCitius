@@ -144,7 +144,7 @@ export default function LeadershipMatters() {
   return (
     <section
       id="leadership"
-      className="w-full bg-white py-12 md:py-16 lg:py-20"
+      className="w-full bg-white py-7 md:py-8 lg:py-10"
     >
       <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
         {/* Eyebrow */}

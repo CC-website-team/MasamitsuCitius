@@ -16,11 +16,11 @@ export default function SolutionScopeFeatures({
   if (!features || features.length === 0) return null;
 
   return (
-    <section className="relative z-10 bg-[#070E1B] text-white py-12 md:py-16 lg:py-20 border-t border-slate-800/80 overflow-hidden">
+    <section className="relative z-10 bg-[#070E1B] text-white py-7 md:py-8 lg:py-10 border-t border-slate-800/80 overflow-hidden">
       {/* Background Subtle Pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#D95F02_1px,transparent_1px)] [background-size:24px_24px]" />
 
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 relative z-10">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">

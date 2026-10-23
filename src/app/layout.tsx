@@ -9,11 +9,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Citiuscomm – Telecom & ICT Infrastructure Solutions",
-    template: "%s | Citiuscomm",
+    default: "Citius – Telecom & ICT Infrastructure Solutions",
+    template: "%s | Citius",
   },
   description:
-    "Citiuscomm delivers carrier-grade telecom and ICT infrastructure solutions across India, SAARC, Singapore, and Dubai: networking, cloud, cybersecurity, and 5G.",
+    "Citius delivers carrier-grade telecom and ICT infrastructure solutions across India, SAARC, Singapore, and Dubai: networking, cloud, cybersecurity, and 5G.",
   keywords: [
     "telecom infrastructure",
     "ICT solutions",

@@ -82,17 +82,17 @@
   --ds-warning: #d97706;
 
   /* ---- Global Spacing System Tokens ---- */
-  --space-container-max:    1200px;
-  --space-pad-x-mobile:     20px;
+  --space-container-max:    1240px;
+  --space-pad-x-mobile:     16px;
   --space-pad-x-desktop:    32px;
 
-  --space-section-py-mobile:  40px;
-  --space-section-py-tablet:  48px;
-  --space-section-py-desktop: 56px;
+  --space-section-py-mobile:  24px;
+  --space-section-py-tablet:  28px;
+  --space-section-py-desktop: 32px;
 
-  --space-major-gap-mobile:   40px;
-  --space-major-gap-tablet:   48px;
-  --space-major-gap-desktop:  56px;
+  --space-major-gap-mobile:   32px;
+  --space-major-gap-tablet:   36px;
+  --space-major-gap-desktop:  40px;
 
   --space-grid-gap-mobile:    16px;
   --space-grid-gap-tablet:    20px;

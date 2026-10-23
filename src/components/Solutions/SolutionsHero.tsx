@@ -3,7 +3,7 @@ import React from "react";
 export default function SolutionsHero() {
   return (
     <section className="relative pt-[110px] pb-10 md:pt-[130px] md:pb-12 lg:pt-[140px] lg:pb-14 bg-white">
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
 
           {/* Left Column: Eyebrow, Heading, Paragraph */}
@@ -12,10 +12,8 @@ export default function SolutionsHero() {
             <div className="flex items-center gap-2 mb-4 sm:mb-5">
               <span className="h-[2px] w-6 bg-[#D95F02]" aria-hidden="true" />
               <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-slate-500">
-                OUR SERVICES
-
+                OUR SOLUTIONS
               </span>
-              <span className="h-[2px] w-8 bg-[#176DB2]" />
             </div>
 
             {/* H1 Heading */}

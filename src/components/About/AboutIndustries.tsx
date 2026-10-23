@@ -152,7 +152,7 @@ const industryCards: IndustryCardData[] = [
 
 export default function AboutIndustries() {
   return (
-    <section className="relative w-full bg-white py-12 md:py-16 lg:py-20 border-t border-slate-100">
+    <section className="relative w-full bg-white py-7 md:py-8 lg:py-10 border-t border-slate-100">
       <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6 md:px-8">
         {/* Section Header */}
         <div className="max-w-2xl mb-8 sm:mb-10 md:mb-12">

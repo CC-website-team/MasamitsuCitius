@@ -14,8 +14,8 @@ export default function SolutionArchitecture({
   steps,
 }: SolutionArchitectureProps) {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-section-alt relative overflow-hidden">
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 relative z-10">
+    <section className="py-7 md:py-8 lg:py-10 bg-section-alt relative overflow-hidden">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8 relative z-10">
 
 
 

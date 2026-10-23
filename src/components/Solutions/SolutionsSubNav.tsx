@@ -126,7 +126,7 @@ export default function SolutionsSubNav() {
     >
       <div
         ref={navContainerRef}
-        className="w-full px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col space-y-2 sm:space-y-2.5"
+        className="mx-auto w-full max-w-[1240px] px-4 md:px-8 flex flex-col space-y-2 sm:space-y-2.5"
       >
         {solutionNavRows.map((row, rowIndex) => (
           <div

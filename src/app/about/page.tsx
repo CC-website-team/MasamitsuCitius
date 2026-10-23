@@ -1,8 +1,6 @@
 import AboutPartnershipHero from "@/components/About/AboutPartnershipHero";
 import Methodology from "@/components/About/Methodology";
 import AboutIndustries from "@/components/About/AboutIndustries";
-{/*import VisionMission from "@/components/About/VisionMission";*/ }
-import LeadershipMatters from "@/components/About/LeadershipMatters";
 import CtaBand from "@/components/CtaBand";
 import PageBackdrop from "@/components/ui/PageBackdrop";
 
@@ -27,14 +25,8 @@ const AboutPage = () => (
       {/* 3. Industries Section */}
       <AboutIndustries />
 
-      {/* 2. Vision & Mission Section 
-      <VisionMission />*/}
-
-      {/* 3. Leadership Matters Section */}
-      <LeadershipMatters />
-
       {/* 4. Call to Action Band */}
-
+      <CtaBand />
     </div>
   </main>
 );

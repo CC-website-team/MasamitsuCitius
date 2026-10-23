@@ -29,7 +29,7 @@ const insights = [
 
 export default function CaseStudyRow() {
   return (
-    <section id="insights" className="w-full bg-section-alt py-12 md:py-16 lg:py-20">
+    <section id="insights" className="w-full bg-section-alt py-7 md:py-8 lg:py-10">
       <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
 
         {/* Section Header */}

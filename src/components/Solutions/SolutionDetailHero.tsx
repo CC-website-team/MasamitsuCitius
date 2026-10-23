@@ -41,7 +41,7 @@ export default function SolutionDetailHero({ data }: SolutionDetailHeroProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-[#051120]/40 via-transparent to-[#051120]/60 pointer-events-none" />
       </div>
 
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 relative z-10">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8 relative z-10">
         <div className="max-w-xl lg:max-w-2xl">
           {/* Eyebrow badge */}
           {data.eyebrow && (

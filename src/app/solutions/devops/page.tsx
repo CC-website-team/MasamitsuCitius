@@ -112,8 +112,8 @@ export default function DevOpsPage() {
 
       {/* 6. Call to Action Band */}
       <CtaBand
-        title="Ready to build what's next."
-        description="Let's start the conversation."
+        title="Deliver Better Software, Faster."
+        description="Build a secure, automated and reliable software delivery lifecycle with integrated DevOps engineering and continuous operations."
         primaryLabel="Talk to Our Experts"
         primaryHref="/contact"
       />

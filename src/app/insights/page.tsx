@@ -148,7 +148,6 @@ export default function InsightsPage() {
                   <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#D95F02]">
                     INSIGHTS
                   </span>
-                  <span className="h-[2px] w-8 bg-[#176DB2]" />
                 </div>
               </Reveal>
 
@@ -265,7 +264,7 @@ export default function InsightsPage() {
 
       {/* ─── FEATURED ARTICLE SECTION ────────────────────────────────── */}
       {selectedCategory === "All" && !searchQuery && (
-        <section className="relative z-10 py-12 md:py-16 lg:py-20 bg-section-alt">
+        <section className="relative z-10 py-7 md:py-8 lg:py-10 bg-section-alt">
           <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
             <Reveal>
               <div className="mb-4 flex items-center gap-2.5">

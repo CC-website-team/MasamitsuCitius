@@ -16,11 +16,11 @@ export default function SolutionSectionCard({ item, isLast = false }: SolutionSe
   return (
     <section
       id={item.slug}
-      className={`scroll-mt-32 sm:scroll-mt-36 py-12 md:py-16 lg:py-20 ${bgClass} ${
+      className={`scroll-mt-32 sm:scroll-mt-36 py-7 md:py-8 lg:py-10 ${bgClass} ${
         !isLast ? "border-b border-slate-200/70" : ""
       }`}
     >
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
+      <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
           
           {/* Text Column */}

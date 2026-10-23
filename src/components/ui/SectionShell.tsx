@@ -52,8 +52,8 @@ const DOTTED: Tone[] = ["navy", "brand"];
  * this component.
  */
 const sizes = {
-  default: "py-12 md:py-16 lg:py-20",
-  compact: "py-12 md:py-16 lg:py-20",
+  default: "py-7 md:py-8 lg:py-10",
+  compact: "py-7 md:py-8 lg:py-10",
 } as const;
 
 interface SectionShellProps {

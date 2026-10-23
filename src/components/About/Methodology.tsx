@@ -113,7 +113,7 @@ const steps = [
 
 export default function Methodology() {
   return (
-    <section className="relative z-10 w-full overflow-hidden bg-white py-12 md:py-16 lg:py-20">
+    <section className="relative z-10 w-full overflow-hidden bg-white py-7 md:py-8 lg:py-10">
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 md:px-8">
         {/* Eyebrow badge */}
         <Reveal className="text-left">

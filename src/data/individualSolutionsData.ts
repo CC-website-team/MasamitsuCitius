@@ -1563,7 +1563,7 @@ export const individualSolutionsData: Record<string, IndividualSolutionDetail> =
     tagline: "Cloud foundations that scale, from the rack to the region.",
     heroDescription:
       "We architect hybrid multi-cloud foundations and deploy production-grade AI that transform enterprise operations. By combining cloud landing zones, container orchestration, and continuous observability with generative AI, predictive ML models, and MLOps governance, we help organisations build scalable, secure, and intelligent enterprise environments.",
-    imagePath: "/images/about/Modern Cloud Operations Infographic.png",
+    imagePath: "/images/c1af6544-69b4-41ac-a09c-eb0d1766dc09.png",
     imageAlt: "Enterprise cloud infrastructure, modern data center, and hybrid multi-cloud architecture",
     stats: [
       { value: "99.99%", label: "Cloud SLA Availability" },

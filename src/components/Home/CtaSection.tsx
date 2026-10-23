@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function CtaSection() {
   return (
-    <section className="relative w-full bg-white py-12 md:py-16 lg:py-20 border-t border-slate-100 overflow-hidden">
+    <section className="relative w-full bg-white py-7 md:py-8 lg:py-10 border-t border-slate-100 overflow-hidden">
       <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8 relative z-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -18,7 +18,7 @@ export default function CtaSection() {
               <span className="text-xs font-extrabold tracking-[0.18em] text-[#142B45] uppercase">
                 LET'S WORK TOGETHER
               </span>
-              <span className="h-[2px] w-8 bg-[#176DB2]" />
+              <span className="h-[2px] w-8 bg-[#C9232C]" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-bold leading-[1.15] text-[#142B45]">
@@ -32,10 +32,11 @@ export default function CtaSection() {
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
-                href="/solutions"
-                className="inline-flex items-center justify-center gap-2 rounded border-2 border-black/80 bg-white/10 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-Black focus:outline-none"
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded bg-[#C9232C] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#a81a22] focus:outline-none"
               >
                 <span>Let's Connect</span>
+                <span className="text-base font-bold">→</span>
               </Link>
 
 
@@ -47,7 +48,7 @@ export default function CtaSection() {
             <div className="relative w-full max-w-[520px] lg:max-w-none rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 bg-slate-100">
               <div className="relative aspect-[16/10] w-full">
                 <Image
-                  src="/images/cta-bridge.jpg"
+                  src="/images/Partners/Building Tomorrow Beneath Mount Fuji.png"
                   alt="MASAMITSU CITIUS Technology Project Infrastructure"
                   fill
                   className="object-cover object-center"

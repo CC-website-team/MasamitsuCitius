@@ -8,9 +8,9 @@ export default function PartnershipSection() {
   return (
     <section className="relative w-full bg-white py-12 md:py-16 lg:py-20 border-t border-slate-100">
       <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
-          
+
           {/* LEFT COLUMN — HEADING, TEXT & CTA */}
           <div className="lg:col-span-5 space-y-5 lg:space-y-6">
             {/* Section Eyebrow with subtle red & blue accents */}
@@ -33,7 +33,7 @@ export default function PartnershipSection() {
                 Technology projects succeed when architecture, execution, and accountability work together.
               </p>
               <p>
-                <strong className="text-[#142B45] font-semibold">MASAMITSU</strong> provides solution architecture, technical design, engineering governance, and quality assurance while <strong className="text-[#142B45] font-semibold">CitiusComm</strong> delivers system integration, infrastructure deployment, project execution, and lifecycle support.
+                <strong className="text-[#142B45] font-semibold">Masamitsu</strong> provides solution architecture, technical design, engineering governance, and quality assurance while <strong className="text-[#142B45] font-semibold">Citius</strong> delivers system integration, infrastructure deployment, project execution, and lifecycle support.
               </p>
               <p>
                 Together we provide a unified delivery model that ensures projects are planned correctly, implemented efficiently, and supported throughout their operational lifecycle.
@@ -41,13 +41,9 @@ export default function PartnershipSection() {
             </div>
 
             <div className="pt-2">
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#C9232C] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#a81a22] hover:gap-3 focus:outline-none focus:ring-2 focus:ring-[#176DB2] focus:ring-offset-2"
-              >
-                <span>Learn More About Our Partnership</span>
-                <span className="text-base font-bold transition-transform duration-200">→</span>
-              </Link>
+
+
+
             </div>
           </div>
 

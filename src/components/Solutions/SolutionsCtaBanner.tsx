@@ -77,7 +77,7 @@ export default function SolutionsCtaBanner() {
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
-              Partner with CitiusComm and let's build a more connected tomorrow.
+              Partner with Citius and let's build a more connected tomorrow.
             </p>
           </div>
 

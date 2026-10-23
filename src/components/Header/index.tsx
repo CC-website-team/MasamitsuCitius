@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <MasamitsuCitiusLogo className="h-11 sm:h-12 md:h-[50px] lg:h-[52px] xl:h-[54px] w-auto transition-all duration-300" />
+            <MasamitsuCitiusLogo className="h-12 sm:h-14 md:h-[56px] lg:h-[60px] xl:h-[64px] w-auto transition-all duration-300" />
           </Link>
 
           {/* Desktop Navigation Links */}

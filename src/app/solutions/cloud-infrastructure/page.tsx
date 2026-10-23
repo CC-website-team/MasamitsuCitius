@@ -47,8 +47,8 @@ export default function CloudInfrastructurePage() {
 
       {/* 6. Call to Action Band */}
       <CtaBand
-        title="Build Your Next-Generation Cloud Foundation"
-        description="Connect scalable cloud infrastructure with secure, resilient operations and production-ready AI."
+        title="Ready to build what's next."
+        description=" Let's start the conversation."
         primaryLabel="Talk to Our Experts"
         primaryHref="/contact"
       />

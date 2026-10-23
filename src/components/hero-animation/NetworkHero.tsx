@@ -32,31 +32,29 @@ export default function NetworkHero() {
             {/* Main Headline */}
             <h1 className="font-extrabold tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] leading-[1.12]">
               Technology for{" "}
-              <span className="text-[#176DB2]">Secure, Intelligent &amp;</span>{" "}
-              Resilient Infrastructure
+              <span className="text-[#D95F02]">Secure, Intelligent &amp; Resilient</span>{" "}
+              Infrastructure
             </h1>
 
             {/* Sub-paragraph */}
             <p className="max-w-xl text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-              <strong className="text-white font-bold">MASAMITSU</strong> and{" "}
-              <strong className="text-white font-bold">CitiusComm</strong> together combine Japanese engineering expertise with Indian execution capabilities.The breath of services would cover surveillance, cybersecurity, system integration and critical infrastructure solutions for enterprises and government organizations.
+              <strong className="text-white font-bold">Masamitsu</strong> and{" "}
+              <strong className="text-white font-bold">Citius</strong> together combine Japanese engineering expertise with Indian execution capabilities.The breath of services would cover surveillance, cybersecurity, system integration and critical infrastructure solutions for enterprises and government organizations.
             </p>
 
             {/* Action Buttons — Smooth transition to Red (#C9232C) on hover */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded bg-[#C9232C] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#a81a22] focus:outline-none"
+                className="inline-flex items-center justify-center gap-2 rounded border-2 border-white/80 bg-white/10 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white focus:outline-none"
               >
                 <span>Request Consultation</span>
-                <span className="text-base font-bold">→</span>
               </Link>
-
               <Link
                 href="/solutions"
                 className="inline-flex items-center justify-center gap-2 rounded border-2 border-white/80 bg-white/10 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white focus:outline-none"
               >
-                <span>Explore Solutions</span>
+                <span>Explore Services</span>
               </Link>
             </div>
 

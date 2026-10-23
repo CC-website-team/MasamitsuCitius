@@ -9,11 +9,14 @@ const footerNav = {
     { label: "About Us", href: "/about" },
     { label: "Insights", href: "/insights" },
   ],
-  solutions: [
-    { label: "Surveillance & Security", href: "/solutions" },
-    { label: "Cybersecurity Solutions", href: "/solutions" },
-    { label: "Cloud & AI Solutions", href: "/solutions" },
-    { label: "System Integration", href: "/solutions" },
+  services: [
+    { label: "Network Solutions", href: "/solutions/data-centre-cloud" },
+    { label: "Cybersecurity & Surveillance", href: "/solutions/cybersecurity" },
+    { label: "Cloud Infrastructure", href: "/solutions/cloud-infrastructure" },
+    { label: "Application Development Management", href: "/solutions/application-engineering-devsecops" },
+    { label: "DevOps", href: "/solutions/devops" },
+    { label: "AI", href: "/solutions/ai-solutions" },
+    { label: "Cloud-Native Applications", href: "/solutions/cloud-ai-solutions" },
   ],
 };
 
@@ -21,14 +24,14 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#142B45] text-slate-300 py-10 lg:py-14 border-t border-slate-800">
       <div className="mx-auto w-full max-w-[1240px] px-4 md:px-8">
-        
+
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-10 border-b border-slate-700/60">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block">
-              <MasamitsuCitiusLogo className="h-9 w-auto" />
+              <MasamitsuCitiusLogo className="h-11 sm:h-12 w-auto" />
             </Link>
 
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm">
@@ -78,10 +81,10 @@ export default function Footer() {
 
             <div>
               <h3 className="text-xs font-extrabold tracking-widest text-white uppercase mb-4">
-                SOLUTIONS
+                SERVICES
               </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm">
-                {footerNav.solutions.map((item) => (
+                {footerNav.services.map((item) => (
                   <li key={item.label}>
                     <Link href={item.href} className="text-slate-300 hover:text-white transition-colors">
                       {item.label}

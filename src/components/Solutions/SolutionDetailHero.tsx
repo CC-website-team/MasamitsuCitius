@@ -13,8 +13,8 @@ export default function SolutionDetailHero({ data }: SolutionDetailHeroProps) {
       : "/images/solutions/cloud-infrastructure-hero.png";
 
   return (
-    <section className="relative z-10 overflow-hidden bg-[#061324] text-white py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28 min-h-[480px] md:min-h-[520px] flex items-center">
-      {/* Full-width Background Image */}
+    <section className="relative z-10 overflow-hidden bg-[#051120] text-white py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28 min-h-[480px] md:min-h-[520px] lg:min-h-[540px] flex items-center">
+      {/* Full-width 16:9 Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImage}
@@ -22,12 +22,23 @@ export default function SolutionDetailHero({ data }: SolutionDetailHeroProps) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right-top md:object-right opacity-90 md:opacity-100"
+          className="object-cover object-center md:object-right"
         />
-        {/* Cool-toned Dark Blue Gradient Overlay: Strong opaque cover on left, fading to reveal illuminated server racks on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#051120] via-[#061528]/95 to-[#081B34]/35 w-full md:w-[75%] lg:w-[65%]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#051120]/95 via-[#061528]/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#051120]/60 via-transparent to-[#051120]/70 pointer-events-none" />
+        {/*
+          Smooth asymmetric gradient overlay:
+          - Strongest dark coverage on the left (solid #051120) behind heading and text content for crystal-clear readability
+          - Smooth, progressive linear transition across the center
+          - Fades out cleanly toward the right to showcase the 16:9 background image with high fidelity and zero murky opacity
+        */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(5,17,32,0.98) 0%, rgba(5,17,32,0.94) 32%, rgba(5,17,32,0.80) 50%, rgba(5,17,32,0.40) 70%, rgba(5,17,32,0.05) 90%, rgba(5,17,32,0.0) 100%)",
+          }}
+        />
+        {/* Subtle top/bottom edge blend to seamlessly transition into surrounding page chrome */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#051120]/40 via-transparent to-[#051120]/60 pointer-events-none" />
       </div>
 
       <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 relative z-10">

@@ -148,6 +148,7 @@ export default function InsightsPage() {
                   <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#D95F02]">
                     INSIGHTS
                   </span>
+                  <span className="h-[2px] w-8 bg-[#176DB2]" />
                 </div>
               </Reveal>
 

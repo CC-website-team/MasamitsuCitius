@@ -21,6 +21,7 @@ export const homeSolutionsList: HomeSolutionItem[] = [
     description:
       "We architect and manage the connectivity layer that links your sites, data centres, clouds, devices and people — securely and reliably.",
     image: "/images/7fe9318a-7c68-4bf8-9759-ca61e80e5b49.png",
+
     alt: "Enterprise network switches, optical fiber infrastructure, and structured cabling",
     features: [
       "Enterprise WAN & SD-WAN",
@@ -39,7 +40,7 @@ export const homeSolutionsList: HomeSolutionItem[] = [
     tagline: "Security that enables the business, not one that blocks it",
     description:
       "From governance and compliance to 24x7 monitoring and incident response, we help build security programmes that support business objectives.",
-    image: "/images/0f3426b1-078c-4703-929c-37762f2b97d9.png",
+    image: "/images/about/42811f21-2cc0-4766-bf6c-131a1d38b579.png",
     alt: "Cybersecurity operations center, threat monitoring, and video surveillance",
     features: [
       "Video Surveillance & Smart AI Analytics",
@@ -58,7 +59,7 @@ export const homeSolutionsList: HomeSolutionItem[] = [
     tagline: "Resilient foundations for hybrid enterprise workloads",
     description:
       "We architect hybrid multi-cloud foundations and deploy scalable compute, storage, and landing zones tailored for high availability.",
-    image: "/images/c1af6544-69b4-41ac-a09c-eb0d1766dc09.png",
+    image: "/images/about/Modern Cloud Operations Infographic.png",
     alt: "Enterprise cloud infrastructure, data center, and hybrid multi-cloud architecture",
     features: [
       "Cloud Strategy & Automated Landing Zones",
@@ -77,7 +78,7 @@ export const homeSolutionsList: HomeSolutionItem[] = [
     tagline: "Build better. Secure every release. Keep applications running.",
     description:
       "We manage applications across their entire lifecycle, from requirements and design through development, testing, release and 24/7 support.",
-    image: "/images/solutions/system-integration-card.jpg",
+    image: "/images/about/ec207bea-22c5-47d6-bdaf-55d2e2ed33d3.png",
     alt: "Application engineering, custom software development, and systems integration",
     features: [
       "Custom Enterprise App & SaaS Development",
@@ -96,7 +97,7 @@ export const homeSolutionsList: HomeSolutionItem[] = [
     tagline: "Automate delivery and secure every release pipeline",
     description:
       "We automate how software is built, tested, released, and run by combining CI/CD pipelines, infrastructure as code, and container platforms.",
-    image: "/images/2299a8df-7127-4e9c-b8d6-51268d289cbb.png",
+    image: "/images/about/4c91f48b-7294-4ae2-bd25-4ec68a7dfd60.png",
     alt: "CI/CD pipelines, DevOps automation, and container orchestration platforms",
     features: [
       "Automated CI/CD & Delivery Pipelines",
@@ -115,7 +116,7 @@ export const homeSolutionsList: HomeSolutionItem[] = [
     tagline: "Production AI systems that transform enterprise operations",
     description:
       "We help organisations move from AI experiments to systems that run the business — from data foundations to generative assistants and MLOps.",
-    image: "/images/f9a98921-188e-4b51-acaa-0a60a283fd0e.png",
+    image: "/images/about/e42f7472-6c57-493a-b1ee-4caf751ac69d.png",
     alt: "Artificial Intelligence, enterprise assistants, and machine learning models",
     features: [
       "Generative AI & Enterprise Assistants",

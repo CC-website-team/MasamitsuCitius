@@ -18,7 +18,7 @@ export default function CtaSection() {
               <span className="text-xs font-extrabold tracking-[0.18em] text-[#142B45] uppercase">
                 LET'S WORK TOGETHER
               </span>
-              <span className="h-[2px] w-8 bg-[#C9232C]" />
+              <span className="h-[2px] w-8 bg-[#176DB2]" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-bold leading-[1.15] text-[#142B45]">
@@ -32,11 +32,10 @@ export default function CtaSection() {
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded bg-[#C9232C] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#a81a22] focus:outline-none"
+                href="/solutions"
+                className="inline-flex items-center justify-center gap-2 rounded border-2 border-black/80 bg-white/10 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-Black focus:outline-none"
               >
                 <span>Let's Connect</span>
-                <span className="text-base font-bold">→</span>
               </Link>
 
 

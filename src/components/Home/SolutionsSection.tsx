@@ -129,10 +129,10 @@ export default function SolutionsSection() {
     const container = sliderRef.current;
     const card = container.firstElementChild as HTMLElement;
     const cardWidth = card ? card.offsetWidth + 20 : 320;
-    
+
     // On desktop scroll 2 cards, on mobile/tablet scroll 1 card
     const scrollAmount = window.innerWidth >= 1200 ? cardWidth * 2 : cardWidth;
-    
+
     container.scrollBy({
       left: direction === "next" ? scrollAmount : -scrollAmount,
       behavior: "smooth",
@@ -192,7 +192,7 @@ export default function SolutionsSection() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-t from-[#C9232C]/4 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 lg:mb-12">
           {/* Left Title & Subtitle */}
@@ -202,14 +202,14 @@ export default function SolutionsSection() {
               <span className="text-xs font-extrabold tracking-[0.18em] text-[#142B45] uppercase">
                 OUR SOLUTIONS
               </span>
-              <span className="h-[2px] w-8 bg-[#C9232C]" />
+              <span className="h-[2px] w-8 bg-[#176DB2]" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.15] text-[#142B45] tracking-tight">
               End-to-End Technology <span className="text-[#C9232C]">Solutions</span>
             </h2>
 
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl pt-1">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl pt-1">
               From network infrastructure and cybersecurity to cloud architectures, DevOps, and enterprise AI, we deliver unified technology solutions for modern enterprises and government organizations.
             </p>
           </div>
@@ -221,33 +221,30 @@ export default function SolutionsSection() {
               <button
                 type="button"
                 onClick={() => handleCategoryChange("all")}
-                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${
-                  activeCategory === "all"
-                    ? "bg-white text-[#142B45] shadow-xs"
-                    : "text-slate-600 hover:text-[#142B45]"
-                }`}
+                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${activeCategory === "all"
+                  ? "bg-white text-[#142B45] shadow-xs"
+                  : "text-slate-600 hover:text-[#142B45]"
+                  }`}
               >
                 All (7)
               </button>
               <button
                 type="button"
                 onClick={() => handleCategoryChange("infrastructure")}
-                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${
-                  activeCategory === "infrastructure"
-                    ? "bg-white text-[#142B45] shadow-xs"
-                    : "text-slate-600 hover:text-[#142B45]"
-                }`}
+                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${activeCategory === "infrastructure"
+                  ? "bg-white text-[#142B45] shadow-xs"
+                  : "text-slate-600 hover:text-[#142B45]"
+                  }`}
               >
                 IT Infrastructure (3)
               </button>
               <button
                 type="button"
                 onClick={() => handleCategoryChange("engineering")}
-                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${
-                  activeCategory === "engineering"
-                    ? "bg-white text-[#142B45] shadow-xs"
-                    : "text-slate-600 hover:text-[#142B45]"
-                }`}
+                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer ${activeCategory === "engineering"
+                  ? "bg-white text-[#142B45] shadow-xs"
+                  : "text-slate-600 hover:text-[#142B45]"
+                  }`}
               >
                 Application Engineering (4)
               </button>
@@ -260,11 +257,10 @@ export default function SolutionsSection() {
                 aria-label="Previous service"
                 onClick={() => handleScroll("prev")}
                 disabled={!canScrollPrev}
-                className={`group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white shadow-xs transition-all duration-200 cursor-pointer ${
-                  !canScrollPrev
-                    ? "opacity-35 cursor-not-allowed text-slate-400"
-                    : "text-[#142B45] hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white hover:shadow-md"
-                }`}
+                className={`group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white shadow-xs transition-all duration-200 cursor-pointer ${!canScrollPrev
+                  ? "opacity-35 cursor-not-allowed text-slate-400"
+                  : "text-[#142B45] hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white hover:shadow-md"
+                  }`}
               >
                 <svg className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -276,11 +272,10 @@ export default function SolutionsSection() {
                 aria-label="Next service"
                 onClick={() => handleScroll("next")}
                 disabled={!canScrollNext}
-                className={`group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white shadow-xs transition-all duration-200 cursor-pointer ${
-                  !canScrollNext
-                    ? "opacity-35 cursor-not-allowed text-slate-400"
-                    : "text-[#142B45] hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white hover:shadow-md"
-                }`}
+                className={`group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white shadow-xs transition-all duration-200 cursor-pointer ${!canScrollNext
+                  ? "opacity-35 cursor-not-allowed text-slate-400"
+                  : "text-[#142B45] hover:bg-[#C9232C] hover:border-[#C9232C] hover:text-white hover:shadow-md"
+                  }`}
               >
                 <svg className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -328,15 +323,10 @@ export default function SolutionsSection() {
                   <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/95 backdrop-blur-xs text-[#142B45] shadow-xs border border-white/40">
                     {card.category}
                   </div>
-
-                  {/* Circular Red Icon Badge Overlapping bottom edge of image */}
-                  <div className="absolute -bottom-5 left-4.5 sm:left-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#C9232C] shadow-md border-[3px] border-white group-hover:bg-[#a81a22] group-hover:scale-105 transition-all duration-300 z-10">
-                    {renderBadgeIcon(card.id)}
-                  </div>
                 </Link>
 
                 {/* Card Content Body */}
-                <div className="p-4 sm:p-5 lg:p-4 xl:p-4.5 2xl:p-5 pt-7 sm:pt-8 flex flex-col flex-grow">
+                <div className="p-4 sm:p-5 lg:p-4 xl:p-4.5 2xl:p-5 flex flex-col flex-grow">
                   {/* Single-line Card Title with uniform height and alignment across all cards */}
                   <div className="h-7 sm:h-8 flex items-center mb-3 sm:mb-3.5">
                     <Link href={card.link} className="block w-full">
@@ -397,11 +387,10 @@ export default function SolutionsSection() {
                 aria-selected={activeIndex === idx}
                 aria-label={`Go to slide ${idx + 1}: ${item.title}`}
                 onClick={() => scrollToCard(idx)}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeIndex === idx
-                    ? "w-7 bg-[#C9232C]"
-                    : "w-2 bg-slate-300 hover:bg-slate-400"
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === idx
+                  ? "w-7 bg-[#C9232C]"
+                  : "w-2 bg-slate-300 hover:bg-slate-400"
+                  }`}
               />
             ))}
           </div>

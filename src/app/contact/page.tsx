@@ -11,6 +11,7 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 const headquarters = {
   city: "Mumbai",
   label: "Headquarters",
+  companyName: "CITIUS COMMUNICATIONS",
   address:
     "503, Filix Tower, LBS Marg,\nOpp. Asian Paints, Bhandup (West),\nMumbai – 400078.",
   phone: "+91 7045908869 / +91 9831427082",
@@ -21,11 +22,42 @@ const headquarters = {
     "https://maps.google.com?q=503+Filix+Tower+LBS+Marg+Bhandup+West+Mumbai+400078",
 };
 
+const japanOffice = {
+  city: "Miyakonojo, Miyazaki",
+  country: "Japan",
+  label: "Japan Office",
+  companyName: "MASAMITSU CO., LTD.",
+  address:
+    "3017-104 Miyamaru, Miyakonojo,\nMiyazaki 885-0078,\nJapan",
+  email: "info@mnes.jp",
+  mapSrc:
+    "https://maps.google.com/maps?q=3017-104+Miyamaru,+Miyakonojo,+Miyazaki+885-0078,+Japan&z=15&output=embed",
+  mapLink:
+    "https://maps.google.com?q=3017-104+Miyamaru,+Miyakonojo,+Miyazaki+885-0078,+Japan",
+};
+
 const branches = [
-  { city: "Kolkata", country: "India", email: "sales@citiuscomm.com" },
-  { city: "Delhi", country: "India", email: "sales@citiuscomm.com" },
-  { city: "Singapore", country: "Singapore", email: "sales@citiuscomm.com" },
-  { city: "Dubai", country: "United Arab Emirates", email: "sales@citiuscomm.com" },
+  {
+    city: "Kolkata",
+    country: "India",
+    email: "sales@citiuscomm.com",
+    address:
+      "GE-56, Rajdanga Main Rd, Sarat Park,\nBosepukur Purbapara,Sector G, East Kolkata Twp, \nKolkata, West Bengal 700107",
+  },
+  {
+    city: "Delhi",
+    country: "India",
+    email: "sales@citiuscomm.com",
+    address:
+      "Citius Communications Pvt. Ltd., Ground Floor – B25, Okhla Industrial Area, Phase-II, New Delhi – 110020.",
+  },
+  {
+    city: "Singapore",
+    country: "Singapore",
+    email: "sales@citiuscomm.com",
+    address:
+      "CITIUS COMMUNICATIONS PTE. LTD., 1 North Bridge Road, #07-10, High Street Centre, Singapore 179094.",
+  },
 ];
 
 /* ─── SVG Icons ───────────────────────────────────────────── */
@@ -394,42 +426,41 @@ export default function Contact() {
       {/* ─── SECTION 4: GLOBAL OFFICES DIRECTORY ────────────────────── */}
       <section id="global-offices" className="relative z-10 py-12 md:py-16 lg:py-20 bg-white border-t border-slate-200/60">
         <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8">
-          <div className="mb-12 text-center">
+          <div className="mb-12 text-left">
             <div className="mb-4 inline-flex items-center gap-2">
               <Badge variant="brand" dot>Global Offices</Badge>
             </div>
             <h2 className="mb-4 text-3xl sm:text-4xl font-extrabold text-[#0A2540]">
               Always Close to Where You Need Us
             </h2>
-            <p className="mx-auto max-w-2xl text-base text-[#4A6785] leading-relaxed">
-              A strong presence across India with growing international operations in Singapore and Dubai.
+            <p className="max-w-2xl text-base text-[#4A6785] leading-relaxed">
+              A strong presence across India with growing international operations in Singapore.
             </p>
           </div>
 
-          {/* Headquarters Card */}
-          <Reveal>
-            <div className="ds-tile p-8 sm:p-10 mb-8 border border-slate-200 bg-white shadow-md">
-              <div className="grid items-stretch gap-8 lg:grid-cols-2">
-                <div className="flex flex-col justify-between">
-                  <div>
-                    <div className="mb-6 flex items-center gap-4">
-                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#FFF3E8] text-[#D95F02]">
-                        <PinIcon size={26} />
-                      </div>
-                      <div>
-                        <span className="mb-1 inline-block rounded-full bg-[#0A2540] px-3 py-0.5 text-xs font-bold uppercase tracking-widest text-white">
-                          Headquarters
-                        </span>
-                        <h3 className="text-2xl font-bold text-[#0A2540]">{headquarters.city}</h3>
-                      </div>
+          {/* Headquarters (Mumbai) & Japan Office 2-Column Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            {/* Left Card: Mumbai Headquarters */}
+            <Reveal>
+              <div className="ds-tile p-6 sm:p-8 border border-slate-200 bg-white shadow-md rounded-2xl h-full flex flex-col justify-between">
+                <div>
+                  <div className="mb-6 flex items-center gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#FFF3E8] text-[#D95F02]">
+                      <PinIcon size={26} />
                     </div>
-
-                    <p className="mb-6 whitespace-pre-line border-b border-slate-100 pb-6 text-base leading-relaxed text-[#4A6785]">
-                      {headquarters.address}
-                    </p>
+                    <div>
+                      <span className="mb-1 inline-block rounded-full bg-[#0A2540] px-3 py-0.5 text-xs font-bold uppercase tracking-widest text-white">
+                        {headquarters.label}
+                      </span>
+                      <h3 className="text-2xl font-bold text-[#0A2540]">{headquarters.city}</h3>
+                    </div>
                   </div>
 
-                  <div className="flex flex-col gap-3">
+                  <p className="mb-6 whitespace-pre-line border-b border-slate-100 pb-6 text-base leading-relaxed text-[#4A6785]">
+                    {headquarters.address}
+                  </p>
+
+                  <div className="flex flex-col gap-3 mb-6">
                     <div className="flex items-center gap-3 text-sm text-[#4A6785]">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#E8F1F9] text-[#156EB0]">
                         <PhoneIcon />
@@ -447,8 +478,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Map Frame */}
-                <div className="relative min-h-[260px] overflow-hidden rounded-xl border border-slate-200 shadow-inner">
+                {/* Map Frame for Mumbai */}
+                <div className="relative min-h-[260px] h-[280px] overflow-hidden rounded-xl border border-slate-200 shadow-inner mt-2">
                   <a
                     href={headquarters.mapLink}
                     target="_blank"
@@ -461,26 +492,105 @@ export default function Contact() {
                     src={headquarters.mapSrc}
                     width="100%"
                     height="100%"
-                    style={{ border: 0, minHeight: "260px" }}
+                    style={{ border: 0 }}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Mumbai HQ"
+                    title="Mumbai Headquarters Map"
                     className="h-full w-full"
                   />
                 </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+
+            {/* Right Card: Japan Office */}
+            <Reveal delay={0.12}>
+              <div className="ds-tile p-6 sm:p-8 border border-slate-200 bg-white shadow-md rounded-2xl h-full flex flex-col justify-between">
+                <div>
+                  <div className="mb-6 flex items-center gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#FFF3E8] text-[#D95F02]">
+                      <PinIcon size={26} />
+                    </div>
+                    <div>
+                      <span className="mb-1 inline-block rounded-full bg-[#0A2540] px-3 py-0.5 text-xs font-bold uppercase tracking-widest text-white">
+                        {japanOffice.label}
+                      </span>
+                      <h3 className="text-2xl font-bold text-[#0A2540]">{japanOffice.companyName}</h3>
+                    </div>
+                  </div>
+
+                  <p className="mb-6 whitespace-pre-line border-b border-slate-100 pb-6 text-base leading-relaxed text-[#4A6785]">
+                    {japanOffice.address}
+                  </p>
+
+                  <div className="flex flex-col gap-3 mb-6">
+                    <div className="flex items-center gap-3 text-sm text-[#4A6785]">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#E8F1F9] text-[#156EB0]">
+                        <PinIcon size={16} />
+                      </div>
+                      <span className="font-semibold text-[#0A2540]">{japanOffice.city}, {japanOffice.country}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#E8F1F9] text-[#156EB0]">
+                        <MailIcon />
+                      </div>
+                      <a href={`mailto:${japanOffice.email}`} className="font-semibold text-[#156EB0] hover:underline">
+                        {japanOffice.email}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Map Frame for Japan */}
+                <div className="relative min-h-[260px] h-[280px] overflow-hidden rounded-xl border border-slate-200 shadow-inner mt-2">
+                  <a
+                    href={japanOffice.mapLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-md bg-[#0A2540] px-3 py-1.5 text-xs font-medium text-white shadow transition-colors hover:bg-[#156EB0]"
+                  >
+                    Open in Maps <ExternalIcon />
+                  </a>
+                  <iframe
+                    src={japanOffice.mapSrc}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Japan Office Map - Miyakonojo, Miyazaki"
+                    className="h-full w-full"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
 
           {/* Regional Branches */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {branches.map((office, i) => (
-              <Reveal key={office.city} delay={i * 0.08}>
-                <div className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all">
+              <Reveal key={office.city} delay={i * 0.08} className="h-full">
+                <div
+                  tabIndex={0}
+                  role="region"
+                  aria-label={`${office.city} office`}
+                  className="group flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md hover:border-[#156EB0]/40 focus:shadow-md focus:border-[#156EB0] focus:outline-none transition-all duration-300"
+                >
                   <div>
                     <h3 className="text-xl font-bold text-[#0A2540] mb-1">{office.city}</h3>
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{office.country}</p>
+
+                    {/* Inline expanding address on hover / focus */}
+                    <div className="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 group-focus:grid-rows-[1fr] group-focus:opacity-100 group-focus-within:grid-rows-[1fr] group-focus-within:opacity-100 transition-all duration-300 ease-in-out">
+                      <div className="overflow-hidden">
+                        <div className="pt-3 mt-3 border-t border-slate-100">
+                          <p className="whitespace-pre-line text-xs leading-relaxed text-[#4A6785]">
+                            {office.address}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
                   <a
                     href={`mailto:${office.email}`}
                     className="mt-6 flex items-center gap-2 text-xs font-bold text-[#156EB0] hover:underline"

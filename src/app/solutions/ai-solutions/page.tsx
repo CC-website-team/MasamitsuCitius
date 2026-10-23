@@ -48,8 +48,8 @@ export default function AISolutionsPage() {
 
       {/* 6. CTA */}
       <CtaBand
-        title="Put AI to Work Across Your Enterprise"
-        description="Move from experimentation to production with enterprise-ready AI, predictive intelligence, automation, and governed operations."
+        title="Ready to build what's next."
+        description="Let's start the conversation."
         primaryLabel="Talk to Our Experts"
         primaryHref="/contact"
       />

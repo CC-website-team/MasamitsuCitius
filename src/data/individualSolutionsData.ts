@@ -213,7 +213,7 @@ export const individualSolutionsData: Record<string, IndividualSolutionDetail> =
     tagline: "Connectivity that keeps the business running.",
     heroDescription:
       "Our Networking help organisations create secure, software-defined network environments that connect sites, cloud platforms, remote users, and operational assets. By combining intelligent routing, cloud connectivity, network segmentation, and managed operations, we help build networking foundations designed to support modern business operations.\n\n From structured cabling, LAN and campus design to cloude connectivity and edge networks,we deliever end to end engineering and managed operations",
-    imagePath: "/images/7fe9318a-7c68-4bf8-9759-ca61e80e5b49.png",
+    imagePath: "/images/about/8188b193-6cdd-46f8-8cf2-d7185887dc33.png",
     imageAlt: "Data centre server racks with LED lighting and cable management",
     stats: [],
     capabilitiesTitle: "Core Capabilities",
@@ -490,7 +490,7 @@ export const individualSolutionsData: Record<string, IndividualSolutionDetail> =
     tagline: "Security that enables the business, not one that blocks it.",
     heroDescription:
       "We help you identify what matters, protect it proportionately, detect threats early, and recover quickly. From governance and compliance to 24×7 threat monitoring and integrated video surveillance, we secure your digital and physical environments, so you can demonstrate control to regulators, customers and your board.",
-    imagePath: "/images/0f3426b1-078c-4703-929c-37762f2b97d9.png",
+    imagePath: "/images/about/42811f21-2cc0-4766-bf6c-131a1d38b579.png",
     imageAlt: "Cybersecurity operations dashboard with threat visualization map",
     stats: [
       { value: "< 15 Min", label: "Threat Detection & Response SLA" },
@@ -1348,7 +1348,7 @@ export const individualSolutionsData: Record<string, IndividualSolutionDetail> =
     tagline: "From first requirement to every release after.",
     heroDescription:
       "We manage applications across their entire lifecycle, from requirements and design through development, testing, release, and long-term support. With one accountable partner at every stage, organisations keep delivery predictable, quality high, and applications aligned to changing business needs.",
-    imagePath: "",
+    imagePath: "/images/about/ec207bea-22c5-47d6-bdaf-55d2e2ed33d3.png",
     imageAlt: "Application engineering, cloud native development, continuous delivery and DevSecOps operations",
     stats: [
       { value: "4x Faster", label: "Release Velocity" },
@@ -1465,7 +1465,7 @@ export const individualSolutionsData: Record<string, IndividualSolutionDetail> =
     tagline: "Applications built for the cloud, not just moved to it",
     heroDescription:
       "We design and build applications that take full advantage of the cloud, and modernise legacy systems to join them. Using microservices, APIs, and managed cloud services, we help organisations deliver scalable, resilient applications that are easier to change and cheaper to run.",
-    imagePath: "",
+    imagePath: "/images/3a72460c-bdb8-4402-9eb7-07efd2a142d3.png",
     imageAlt: "Enterprise cloud infrastructure, hybrid multi-cloud architecture, and artificial intelligence network",
     stats: [
       { value: "99.99%", label: "Cloud SLA Uptime" },
@@ -1563,7 +1563,7 @@ export const individualSolutionsData: Record<string, IndividualSolutionDetail> =
     tagline: "Cloud foundations that scale, from the rack to the region.",
     heroDescription:
       "We architect hybrid multi-cloud foundations and deploy production-grade AI that transform enterprise operations. By combining cloud landing zones, container orchestration, and continuous observability with generative AI, predictive ML models, and MLOps governance, we help organisations build scalable, secure, and intelligent enterprise environments.",
-    imagePath: "/images/c1af6544-69b4-41ac-a09c-eb0d1766dc09.png",
+    imagePath: "/images/about/Modern Cloud Operations Infographic.png",
     imageAlt: "Enterprise cloud infrastructure, modern data center, and hybrid multi-cloud architecture",
     stats: [
       { value: "99.99%", label: "Cloud SLA Availability" },
@@ -1699,7 +1699,7 @@ export const individualSolutionsData: Record<string, IndividualSolutionDetail> =
     tagline: " Ship faster. Release safely. Operate with confidence",
     heroDescription:
       " We automate how software is built, tested, released, and run. By combining CI/CD pipelines, infrastructure as code, container platforms, and built-in security and observability, we help teams deliver more often, with fewer surprises and faster recovery when things go wrong.",
-    imagePath: "/images/2299a8df-7127-4e9c-b8d6-51268d289cbb.png",
+    imagePath: "/images/about/4c91f48b-7294-4ae2-bd25-4ec68a7dfd60.png",
     imageAlt: "CI/CD pipelines, DevOps engineering, and container platforms",
     stats: [
       { value: "4x Faster", label: "Release Velocity" },

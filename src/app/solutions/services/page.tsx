@@ -2,7 +2,6 @@ import { solutionsData } from "@/data/solutionsData";
 import SolutionsHero from "@/components/Solutions/SolutionsHero";
 import SolutionsSubNav from "@/components/Solutions/SolutionsSubNav";
 import SolutionSectionCard from "@/components/Solutions/SolutionSectionCard";
-import SolutionsProcess from "@/components/Solutions/SolutionsProcess";
 import SolutionsCtaBanner from "@/components/Solutions/SolutionsCtaBanner";
 
 export const metadata = {
@@ -31,10 +30,7 @@ export default function SolutionsPage() {
         ))}
       </div>
 
-      {/* 4. Process Section ("From possibility to progress.") */}
-      <SolutionsProcess />
-
-      {/* 5. Opportunity CTA Banner */}
+      {/* 4. Opportunity CTA Banner */}
       <SolutionsCtaBanner />
     </main>
   );

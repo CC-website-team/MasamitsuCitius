@@ -122,31 +122,31 @@ export default function SolutionsSubNav() {
   return (
     <div
       ref={subNavRef}
-      className="sticky top-[64px] sm:top-[68px] lg:top-[72px] z-30 bg-[#FAFAFC]/95 backdrop-blur-md border-b border-slate-200/90 py-3.5 sm:py-4 shadow-sm"
+      className="sticky top-[64px] sm:top-[68px] lg:top-[72px] z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/90 py-2.5 sm:py-3 shadow-sm"
     >
       <div
         ref={navContainerRef}
-        className="mx-auto w-full max-w-[1200px] px-5 md:px-8 flex flex-col space-y-3 sm:space-y-3.5"
+        className="w-full px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col space-y-2 sm:space-y-2.5"
       >
         {solutionNavRows.map((row, rowIndex) => (
           <div
             key={rowIndex}
-            className="flex items-center text-xs sm:text-sm font-semibold text-slate-700"
+            className="flex items-center w-full"
           >
-            {/* Category Header Label + Orange Pipe Divider */}
-            <div className="flex items-center min-w-[170px] sm:min-w-[215px] shrink-0 justify-between pr-3 sm:pr-5">
-              <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 whitespace-nowrap">
+            {/* Category Header Label + Orange Pipe Divider (Aligned to same vertical line) */}
+            <div className="flex items-center w-[220px] sm:w-[250px] md:w-[270px] shrink-0 justify-between pl-2 sm:pl-4 md:pl-6 pr-4 sm:pr-6 md:pr-8">
+              <span className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap text-left">
                 {row.category}
               </span>
               <span
-                className="h-4 sm:h-5 w-[2.5px] rounded-full bg-[#D95F02] shrink-0"
+                className="h-4 sm:h-4.5 w-[2px] rounded-full bg-[#D95F02] shrink-0 ml-3"
                 aria-hidden="true"
               />
             </div>
 
             {/* Service Tabs */}
             <nav
-              className="flex items-center space-x-5 sm:space-x-8 md:space-x-10 overflow-x-auto custom-thin-scrollbar scroll-smooth pb-0.5 min-w-0"
+              className="flex-1 flex items-center justify-start space-x-6 sm:space-x-8 md:space-x-10 overflow-x-auto custom-thin-scrollbar scroll-smooth py-1 min-w-0"
               aria-label={`${row.category} sub-navigation`}
             >
               {row.items.map((item) => {
@@ -161,7 +161,7 @@ export default function SolutionsSubNav() {
                     data-slug={item.targetSlug}
                     href={`#${item.targetSlug}`}
                     onClick={(e) => handleTabClick(e, item)}
-                    className={`group relative inline-flex items-center whitespace-nowrap py-1 text-xs sm:text-sm md:text-[15px] font-bold transition-colors duration-200 cursor-pointer ${
+                    className={`group relative inline-flex items-center whitespace-nowrap py-1 text-sm sm:text-[15px] md:text-base font-semibold transition-colors duration-200 cursor-pointer ${
                       isActive
                         ? "text-[#D95F02]"
                         : "text-slate-600 hover:text-slate-900"
@@ -170,7 +170,7 @@ export default function SolutionsSubNav() {
                     {item.label}
                     {/* Active underline indicator */}
                     <span
-                      className={`absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#D95F02] shadow-[0_2px_8px_rgba(217,95,2,0.6)] transition-all duration-300 ease-out ${
+                      className={`absolute -bottom-0.5 left-0 h-[2.5px] rounded-full bg-[#D95F02] shadow-[0_2px_8px_rgba(217,95,2,0.5)] transition-all duration-300 ease-out ${
                         isActive
                           ? "w-full opacity-100"
                           : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"
